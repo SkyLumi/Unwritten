@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr5c1og73j7xl"]
-
-[ext_resource type="PackedScene" uid="uid://raij5dyd1ywk" path="res://pager.blend" id="1_okkr1"]
-
-[node name="pager" instance=ExtResource("1_okkr1")]
