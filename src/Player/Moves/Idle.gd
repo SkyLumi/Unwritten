@@ -5,10 +5,7 @@ func default_lifecycle(input) -> String:
 	if not player.is_on_floor():
 		return "midair"
 	
-	if input.input_direction != Vector2.ZERO:
-		return "walk"
-	
-	return "idle"
+	return best_input_that_can_be_paid(input)
 
 
 func on_enter_state():

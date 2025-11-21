@@ -1,6 +1,6 @@
 extends Move
 
-@export var SPEED = 3.0
+@export var SPEED = 0.0
 @export var VERTICAL_SPEED_ADDED : float = 2.5
 
 const TRANSITION_TIMING = 0.44  
@@ -26,10 +26,12 @@ func process_jump():
 	if works_longer_than(JUMP_TIMING):
 		if not jumped:
 			model.jump_count += 1
-			player.velocity = player.basis.z * SPEED 
+			# Preserve horizontal velocity but add vertical speed
 			player.velocity.y += VERTICAL_SPEED_ADDED
 			jumped = true
 
 
 func on_enter_state():
-	player.velocity = player.velocity.normalized() * SPEED 
+	# For idle jump, we want to kill horizontal velocity
+	player.velocity.x = 0
+	player.velocity.z = 0

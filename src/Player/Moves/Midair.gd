@@ -1,12 +1,52 @@
 extends Move
 
 @export var DELTA_VECTOR_LENGTH = 6
+@export var VERTICAL_SPEED_ADDED : float = 2.5
 var jump_direction : Vector3
 
 var landing_height : float = 1.163
+var just_jumped = false
 
+@export var JUMP_SPEED : float = 8.0 # sesuaikan dengan lompat utama kamu
 
-func default_lifecycle(_input : InputPackage):
+#func default_lifecycle(input : InputPackage):
+	#if Input.is_action_just_pressed("jump") and model.jump_count < model.MAX_JUMPS:
+		#just_jumped = true
+		#model.jump_count += 1
+		#player.velocity.y = VERTICAL_SPEED_ADDED
+#
+		## Play the jump animation again
+		#var xz_velocity = player.velocity
+		#xz_velocity.y = 0
+		#if xz_velocity.length_squared() >= 10:
+			#model.animator.set_torso_animation("jump_sprint")
+		#else:
+			#model.animator.set_torso_animation("jump_run")
+		#return "midair"
+func default_lifecycle(input : InputPackage):
+	# Idealnya pakai input dari InputPackage, tapi kalau belum ada:
+	if Input.is_action_just_pressed("jump") and model.jump_count < model.MAX_JUMPS:
+		just_jumped = true
+		model.jump_count += 1
+
+		# Kalau lagi jatuh, nolkan dulu biar double jump nggak kepotong
+		if player.velocity.y < 0.0:
+			player.velocity.y = 0.0
+
+		# Selalu kasih power lompat PENUH (sama dengan lompat pertama)
+		player.velocity.y = JUMP_SPEED
+
+		# Animasi
+		var xz_velocity = player.velocity
+		xz_velocity.y = 0
+		if xz_velocity.length_squared() >= 10:
+			model.animator.set_torso_animation("jump_sprint")
+		else:
+			model.animator.set_torso_animation("jump_run")
+
+		# Tetap di midair
+		return "midair"
+
 	var floor_distance = area_awareness.get_floor_distance()
 	
 	# Transition if close to floor OR if physics engine says we are on floor
@@ -20,8 +60,23 @@ func default_lifecycle(_input : InputPackage):
 		return "okay"
 
 
-func update(_input : InputPackage, delta ):
-	player.velocity.y -= gravity * delta
+#func update(input : InputPackage, delta ):
+	#if just_jumped:
+		#just_jumped = false
+	#else:
+		#player.velocity.y -= gravity * delta
+	#process_input_vector(input, delta)
+	#player.move_and_slide()
+
+func update(input : InputPackage, delta ):
+	if just_jumped:
+		# Frame ini: baru saja lompat → jangan kasih gravitasi dulu
+		just_jumped = false
+	else:
+		player.velocity.y -= gravity * delta
+
+	process_input_vector(input, delta)
+	player.move_and_slide()
 
 
 func process_input_vector(input : InputPackage, delta : float):

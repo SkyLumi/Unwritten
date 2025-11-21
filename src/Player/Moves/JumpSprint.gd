@@ -26,6 +26,7 @@ func update(_input : InputPackage, _delta ):
 func process_jump():
 	if works_longer_than(JUMP_TIMING):
 		if not jumped:
+			model.jump_count += 1
 			player.velocity = player.basis.z * SPEED 
 			player.velocity.y += VERTICAL_SPEED_ADDED
 			jumped = true

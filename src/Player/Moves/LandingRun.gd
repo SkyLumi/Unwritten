@@ -18,3 +18,8 @@ func default_lifecycle(input : InputPackage):
 
 func update(_input : InputPackage, delta ):
 	player.velocity.y -= gravity * delta
+
+
+func on_enter_state():
+	model.reset_jump_count()
+	player.floor_snap_length = 0.1

@@ -11,6 +11,7 @@ var moves_data_repo : MovesDataRepository
 var container : HumanoidStates
 var area_awareness : AreaAwareness
 var legs : Legs
+var model : PlayerModel
 #var left_wrist : BoneAttachment3D
 
 @export var animation : String

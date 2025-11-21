@@ -11,6 +11,7 @@ class_name HumanoidStates
 @export var area_awareness : AreaAwareness
 @export var moves_data_repo : MovesDataRepository
 @export var legs : Legs
+@export var model : PlayerModel
 #@export var left_wrist : BoneAttachment3D
 
 var moves : Dictionary # { string : Move }, where string is Move heirs name
@@ -31,6 +32,7 @@ func accept_moves():
 			child.DURATION = moves_data_repo.get_duration(child.backend_animation)
 			child.area_awareness = area_awareness
 			child.legs = legs
+			child.model = model
 			#child.left_wrist = left_wrist
 			child.assign_combos()
 

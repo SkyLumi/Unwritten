@@ -3,6 +3,10 @@ class_name PlayerModel
 
 @export var is_enemy : bool = false
 
+var jump_count = 0
+const MAX_JUMPS = 2
+
+
 @onready var player = $".."
 @onready var skeleton = %GeneralSkeleton
 @onready var animator = $SplitBodyAnimator
@@ -27,6 +31,7 @@ class_name PlayerModel
 func _ready():
 	print("=== Model._ready() START ===")
 	moves_container.player = player
+	moves_container.model = self
 	print("Player assigned to moves_container")
 	
 	moves_container.accept_moves()
@@ -63,3 +68,6 @@ func switch_to(state : String):
 	current_move._on_exit_state()
 	current_move = moves_container.moves[state]
 	current_move._on_enter_state()
+
+func reset_jump_count():
+	jump_count = 0
