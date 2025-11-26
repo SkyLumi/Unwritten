@@ -1,5 +1,0 @@
-﻿Godot Engine v4.5.stable.official.876b29033 - https://godotengine.org
-
-Track found. Key count: 46
-First key value: (0.000347, 0.974426, 0.014722)
-Last key value: (0.000347, 0.974426, 0.014722)
