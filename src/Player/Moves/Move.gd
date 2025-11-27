@@ -14,6 +14,7 @@ var legs : Legs
 var model : PlayerModel
 #var left_wrist : BoneAttachment3D
 
+@export var tuning : MoveTuning = preload("res://src/Player/Moves/MoveTuning.tres")
 @export var animation : String
 @export var move_name : String
 @export var priority : int
@@ -179,10 +180,8 @@ func form_hit_data(_weapon : Weapon) -> HitData:
 
 
 func react_on_hit(hit : HitData):
-	if not is_vulnerable():
-		print("hit is here, but still the roll")
-	if is_vulnerable():
-		resources.lose_health(hit.damage)
+	# Always apply damage unless god_mode is active; vulnerability only gates reactions.
+	resources.lose_health(hit.damage)
 	if is_interruptable():
 		# TODO rewrite for better effects processing, this scales badly
 		if hit.effects.has("pushback") and hit.effects["pushback"]:

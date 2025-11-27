@@ -33,5 +33,3 @@ static func combat_action_priority_sort(a : String, b : String):
 		return true
 	else:
 		return false
-
-

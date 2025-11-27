@@ -2,6 +2,8 @@ extends Node
 class_name PlayerModel
 
 @export var is_enemy : bool = false
+@export var base_health : float = 100
+@export var base_stamina : float = 100
 
 var jump_count = 0
 const MAX_JUMPS = 2
@@ -30,6 +32,8 @@ const MAX_JUMPS = 2
 
 func _ready():
 	print("=== Model._ready() START ===")
+	_configure_factions_and_hits()
+	_apply_base_resources()
 	moves_container.player = player
 	moves_container.model = self
 	print("Player assigned to moves_container")
@@ -71,3 +75,29 @@ func switch_to(state : String):
 
 func reset_jump_count():
 	jump_count = 0
+
+
+func _configure_factions_and_hits():
+	var own_weapon_group = "player_weapon"
+	if is_enemy:
+		own_weapon_group = "enemy_weapon"
+
+	# Make sure weapon carries only its faction group.
+	if active_weapon:
+		active_weapon.remove_from_group("player_weapon")
+		active_weapon.remove_from_group("enemy_weapon")
+		active_weapon.add_to_group(own_weapon_group)
+
+	# Hurtbox should ignore only self weapons (to avoid self-hit), not opponent.
+	if hurtbox:
+		var ignore_groups : Array[String] = []
+		ignore_groups.append(own_weapon_group)
+		hurtbox.ignored_weapon_groups = ignore_groups
+
+
+func _apply_base_resources():
+	if resources:
+		resources.max_health = base_health
+		resources.health = base_health
+		resources.max_stamina = base_stamina
+		resources.stamina = base_stamina

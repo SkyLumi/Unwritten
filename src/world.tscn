@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://v3se2b3tolae"]
+[gd_scene load_steps=7 format=3 uid="uid://v3se2b3tolae"]
 
 [ext_resource type="PackedScene" uid="uid://87swvf3fxxo1" path="res://src/platform.tscn" id="2_0qwtu"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_xlegt"]
+[ext_resource type="PackedScene" path="res://src/Player/Enemy.tscn" id="3_enemy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k1mdb"]
 
@@ -21,6 +22,9 @@ environment = SubResource("Environment_b4ws5")
 
 [node name="player" parent="." instance=ExtResource("2_xlegt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09192169, 1.8559294, -0.022575974)
+
+[node name="enemy" parent="." instance=ExtResource("3_enemy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89032, 1.8559294, -4)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.08621675, 0.9962764, 0, -0.9962764, 0.08621675, 0, 40.674034, 0)

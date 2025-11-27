@@ -41,6 +41,8 @@ func lose_health(amount : float):
 		health -= amount
 		if health < 1:
 			model.current_move.try_force_move("death")
+		# Visual feedback
+		model.player.visuals.flash_damage()
 
 
 func gain_health(amount : float):
@@ -55,6 +57,15 @@ func lose_stamina(amount : float):
 		stamina -= amount
 		if stamina < 1:
 			statuses.append("fatique")
+
+
+func pay_block_cost(incoming_damage : float, block_coefficient : float):
+	# Blocking drains stamina and a bit of health based on the coefficient.
+	var stamina_loss = incoming_damage * block_coefficient
+	lose_stamina(stamina_loss)
+	var chip_damage = incoming_damage * block_coefficient * 0.2
+	if chip_damage > 0:
+		lose_health(chip_damage)
 
 
 func gain_stamina(amount : float):

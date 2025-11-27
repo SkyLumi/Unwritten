@@ -20,12 +20,10 @@ func process_jump():
 	if works_longer_than(tuning.jump_impulse_delay):
 		if not jumped:
 			model.jump_count += 1
-			# Preserve horizontal velocity but add vertical speed
-			player.velocity.y += tuning.jump_idle_vertical_boost
+			player.velocity = player.basis.z * tuning.jump_run_speed 
+			player.velocity.y += tuning.jump_run_vertical_boost
 			jumped = true
 
 
 func on_enter_state():
-	# For idle jump, we want to kill horizontal velocity
-	player.velocity.x = 0
-	player.velocity.z = 0
+	player.velocity = player.velocity.normalized() * tuning.jump_run_speed 

@@ -6,6 +6,9 @@ var damage : float
 var hit_move_animation : String
 
 var weapon : Weapon
+var effects : Dictionary = {}
 
 static func blank() -> HitData:
-	return HitData.new()
+	var h = HitData.new()
+	h.effects = {}
+	return h

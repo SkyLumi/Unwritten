@@ -1,17 +1,10 @@
 extends Move
 
-@export var SPEED = 5.0
-@export var TURN_SPEED = 3.2
-@export var VERTICAL_SPEED_ADDED : float = 2.5
-
-const TRANSITION_TIMING = 0.4
-const JUMP_TIMING = 0.0657
-
 var jumped : bool = false
 
 
 func default_lifecycle(_input : InputPackage):
-	if works_longer_than(TRANSITION_TIMING):
+	if works_longer_than(tuning.jump_sprint_transition_timing):
 		jumped = false
 		return "midair"
 	else: 
@@ -24,13 +17,13 @@ func update(_input : InputPackage, _delta ):
 
 
 func process_jump():
-	if works_longer_than(JUMP_TIMING):
+	if works_longer_than(tuning.jump_sprint_impulse_delay):
 		if not jumped:
 			model.jump_count += 1
-			player.velocity = player.basis.z * SPEED 
-			player.velocity.y += VERTICAL_SPEED_ADDED
+			player.velocity = player.basis.z * tuning.jump_sprint_speed 
+			player.velocity.y += tuning.jump_sprint_vertical_boost
 			jumped = true
 
 
 func on_enter_state():
-	player.velocity = player.velocity.normalized() * SPEED 
+	player.velocity = player.velocity.normalized() * tuning.jump_sprint_speed 

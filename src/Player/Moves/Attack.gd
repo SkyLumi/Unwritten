@@ -2,6 +2,7 @@ extends Move
 
 
 @export var RELEASES_PRIORITY : float
+@export var attack_stamina_cost : float = 20
 
 var hit_damage = 10 # will be a function of player stats in the future
 
@@ -44,3 +45,8 @@ func form_hit_data(weapon : Weapon) -> HitData:
 func on_exit_state():
 	player.model.active_weapon.hitbox_ignore_list.clear()
 	player.model.active_weapon.is_attacking = false
+
+
+func on_enter_state():
+	stamina_cost = attack_stamina_cost
+	player.visuals.flash_attack()

@@ -8,9 +8,6 @@ func default_lifecycle(input : InputPackage):
 	return best_input_that_can_be_paid(input)
 
 
-@export var SPEED = 2.0
-@export var TURN_SPEED = 5.0
-
 func update(input : InputPackage, delta : float):
 	# Manual movement logic (copied/adapted from Run.gd)
 	var input_direction = (player.camera_mount.basis * Vector3(-input.input_direction.x, 0, -input.input_direction.y)).normalized()
@@ -19,11 +16,11 @@ func update(input : InputPackage, delta : float):
 	if input.input_direction != Vector2.ZERO:
 		var face_direction = player.basis.z
 		var angle = face_direction.signed_angle_to(input_direction, Vector3.UP)
-		player.rotate_y(clamp(angle, -TURN_SPEED * delta, TURN_SPEED * delta))
+		player.rotate_y(clamp(angle, -tuning.walk_turn_speed * delta, tuning.walk_turn_speed * delta))
 	
 	# Apply velocity
-	player.velocity.x = input_direction.x * SPEED
-	player.velocity.z = input_direction.z * SPEED
+	player.velocity.x = input_direction.x * tuning.walk_speed
+	player.velocity.z = input_direction.z * tuning.walk_speed
 	
 	# Apply gravity (keep existing Y velocity or apply gravity)
 	player.velocity.y -= gravity * delta
