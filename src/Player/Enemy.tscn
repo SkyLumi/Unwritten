@@ -1,18 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcf0eohhud0s"]
+[gd_scene load_steps=9 format=3 uid="uid://dcf0eohhud0s"]
 
 [ext_resource type="Script" uid="uid://bepxcserhjcny" path="res://src/Player/Player.gd" id="1_1enemy"]
 [ext_resource type="PackedScene" uid="uid://dkl1i7wju7vba" path="res://src/Player/Visuals/PlayerVisuals.tscn" id="2_visuals"]
 [ext_resource type="PackedScene" uid="uid://eec5ujuowf51" path="res://src/Player/HumanoidModel/HumanoidModel.tscn" id="3_model"]
-[ext_resource type="Script" uid="uid://kv5v0xdok0rm" path="res://src/Player/Input/AIInput.gd" id="4_aiinput"]
+[ext_resource type="Script" uid="uid://kv5v0xdok0rm" path="res://src/Player/Moves/AIInput.gd" id="4_aiinput"]
 [ext_resource type="Script" uid="uid://b7au3oktvuhky" path="res://src/Player/Camera.gd" id="5_camera"]
-[ext_resource type="Script" path="res://src/Player/EnemyHealthBillboard.gd" id="6_billboard"]
+[ext_resource type="Script" uid="uid://dcpr8rygwakx6" path="res://src/Player/EnemyHealthBillboard.gd" id="6_billboard"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_health"]
+viewport_path = NodePath("HealthBillboard/SubViewport")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_enemy"]
 radius = 0.2
 height = 1.8
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_health"]
-viewport_path = NodePath("HealthBillboard/SubViewport")
 
 [node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("1_1enemy")
@@ -32,11 +32,11 @@ resources = NodePath("../Model/Resources")
 show_distance = 9.0
 
 [node name="SubViewport" type="SubViewport" parent="HealthBillboard"]
-size = Vector2i(260, 32)
-render_target_update_mode = 3
 transparent_bg = true
 handle_input_locally = false
+size = Vector2i(260, 32)
 render_target_clear_mode = 2
+render_target_update_mode = 3
 
 [node name="Control" type="Control" parent="HealthBillboard/SubViewport"]
 layout_mode = 3
@@ -45,29 +45,25 @@ offset_right = 200.0
 offset_bottom = 24.0
 
 [node name="ProgressBar" type="ProgressBar" parent="HealthBillboard/SubViewport/Control"]
+modulate = Color(1, 0.2, 0.2, 1)
 layout_mode = 1
-anchors_preset = 0
 offset_left = 6.0
 offset_top = 6.0
 offset_right = 254.0
 offset_bottom = 26.0
-max_value = 100.0
-step = 0.01
-show_percentage = false
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-modulate = Color(1, 0.2, 0.2, 1)
+show_percentage = false
 
 [node name="Sprite3D" type="Sprite3D" parent="HealthBillboard"]
-billboard = 2
-pixel_size = 0.0035
-texture_filter = 2
 modulate = Color(1, 1, 1, 0.95)
+pixel_size = 0.0035
+billboard = 2
+texture_filter = 2
 texture = SubResource("ViewportTexture_health")
 
 [node name="Input" type="Node" parent="."]
 script = ExtResource("4_aiinput")
-navigation_agent = NodePath("../NavigationAgent")
 
 [node name="NavigationAgent" type="NavigationAgent3D" parent="."]
 path_desired_distance = 0.1

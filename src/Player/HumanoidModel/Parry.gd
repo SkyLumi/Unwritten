@@ -11,7 +11,7 @@ func react_on_hit(hit : HitData):
 		print("parry kong")
 	else:
 		super.react_on_hit(hit)
-	hit.queue_free()
+		hit.queue_free()
 
 
 func best_input_that_can_be_paid(input : InputPackage) -> String:

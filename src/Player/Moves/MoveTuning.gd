@@ -20,11 +20,11 @@ class_name MoveTuning
 @export_category("Jump")
 @export var jump_transition_timing: float = 0.44
 @export var jump_impulse_delay: float = 0.1
-@export var jump_run_speed: float = 1.0
+@export var jump_run_speed: float = 2.0
 @export var jump_run_vertical_boost: float = 1.2
 @export var jump_idle_vertical_boost: float = 1.5
-@export var jump_sprint_speed: float = 2.0
-@export var jump_sprint_vertical_boost: float = 1.5
+@export var jump_sprint_speed: float = 5.0
+@export var jump_sprint_vertical_boost: float = 2.0
 @export var jump_sprint_transition_timing: float = 0.4
 @export var jump_sprint_impulse_delay: float = 0.0657
 
