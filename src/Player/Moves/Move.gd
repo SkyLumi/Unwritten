@@ -196,8 +196,11 @@ func react_on_parry(_hit : HitData):
 
 
 func try_force_move(new_forced_move : String):
+	if not container or not container.moves.has(new_forced_move):
+		push_warning("Forced move '%s' not registered; ignoring" % new_forced_move)
+		return
 	if not has_forced_move:
 		has_forced_move = true
 		forced_move = new_forced_move
-	elif container.moves[new_forced_move].priority >= container.moves[forced_move].priority:
+	elif container.moves.has(forced_move) and container.moves[new_forced_move].priority >= container.moves[forced_move].priority:
 		forced_move = new_forced_move

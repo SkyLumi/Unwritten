@@ -4,6 +4,11 @@ extends Move
 const PARRY_WINDOW_START : float = 0.2
 const PARRY_WINDOW_END : float = 1
 
+func update(input : InputPackage, _delta : float):
+	# Halt drift if player lets go of movement while parrying.
+	if input.input_direction == Vector2.ZERO and player.is_on_floor():
+		player.velocity.x = 0
+		player.velocity.z = 0
 
 func react_on_hit(hit : HitData):
 	if works_between(PARRY_WINDOW_START, PARRY_WINDOW_END) and hit.is_parryable:

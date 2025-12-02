@@ -9,6 +9,12 @@ func default_lifecycle(input : InputPackage):
 		return "midair"
 	return best_input_that_can_be_paid(input)
 
+func update(input : InputPackage, _delta : float):
+	# Stop lingering momentum if player releases movement while blocking.
+	if input.input_direction == Vector2.ZERO and player.is_on_floor():
+		player.velocity.x = 0
+		player.velocity.z = 0
+
 
 func react_on_hit(hit : HitData):
 	var weapon_position : Vector3 = hit.weapon.global_position

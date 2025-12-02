@@ -4453,7 +4453,7 @@ script = ExtResource("2_uavh5")
 
 [node name="Resources" type="Node" parent="."]
 script = ExtResource("2_v2u5j")
-god_mode = false
+god_mode = true
 
 [node name="Combat" type="Node" parent="."]
 script = ExtResource("2_vd0q8")

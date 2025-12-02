@@ -2,7 +2,7 @@ extends Node
 class_name HumanoidResources
 
 
-@export var god_mode : bool = false
+@export var god_mode : bool = true
 
 @export var health : float = 100
 @export var max_health : float = 100
@@ -26,9 +26,8 @@ func pay_resource_cost(move : Move):
 
 
 func can_be_paid(move : Move) -> bool:
-	if stamina > 0 or move.stamina_cost == 0:
-		return true
-	return false
+	# Require enough stamina to cover the cost (unless cost is zero).
+	return move.stamina_cost <= 0 or stamina >= move.stamina_cost
 
 # F a part of polymorphism, it doesn't work
 #func can_be_paid(move_name : String) -> bool:
@@ -54,8 +53,10 @@ func gain_health(amount : float):
 
 func lose_stamina(amount : float):
 	if not god_mode:
-		stamina -= amount
-		if stamina < 1:
+		if amount <= 0:
+			return
+		stamina = max(0.0, stamina - amount)
+		if stamina < 1 and not statuses.has("fatique"):
 			statuses.append("fatique")
 
 
