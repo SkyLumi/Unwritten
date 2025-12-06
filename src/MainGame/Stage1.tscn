@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccjrvycgp04o5"]
+
+[ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_7mt63"]
+[ext_resource type="PackedScene" uid="uid://dcf0eohhud0s" path="res://src/Player/Enemy.tscn" id="3_5x8vi"]
+[ext_resource type="PackedScene" uid="uid://cx5kmibjcm5lu" path="res://src/WorldMap/world.scn" id="3_xfnad"]
+
+[node name="Stage1" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("2_7mt63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09192169, 1.8559294, -0.022575974)
+
+[node name="enemy" parent="." instance=ExtResource("3_5x8vi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89032, 1.8559294, -4)
+
+[node name="world" parent="." instance=ExtResource("3_xfnad")]
