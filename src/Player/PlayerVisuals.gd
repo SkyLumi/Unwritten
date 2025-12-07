@@ -21,6 +21,8 @@ var surface_material : StandardMaterial3D
 var sword_material : StandardMaterial3D
 var health_style := StyleBoxFlat.new()
 var stamina_style := StyleBoxFlat.new()
+var sword_visible_timer: float = 0.0  # Timer to keep sword visible
+const SWORD_LINGER_TIME: float = 0.8  # Seconds sword stays visible after attack ends
 
 func accept_model(_model : PlayerModel):
 	model = _model
@@ -41,13 +43,24 @@ func accept_model(_model : PlayerModel):
 	_setup_status_bar_styles()
 
 
-func _process(_delta):
+func _process(delta):
 	update_resources_interface()
-	adjust_weapon_visuals()
+	adjust_weapon_visuals(delta)
 
 
-func adjust_weapon_visuals():
+func adjust_weapon_visuals(delta: float):
 	sword_visuals_1.global_transform = model.active_weapon.global_transform
+	
+	# Reset timer when attacking starts
+	if model.active_weapon.is_attacking:
+		sword_visible_timer = SWORD_LINGER_TIME
+	
+	# Decrease timer
+	if sword_visible_timer > 0:
+		sword_visible_timer -= delta
+	
+	# Show sword if timer is active
+	sword_visuals_1.visible = sword_visible_timer > 0
 
 
 func update_resources_interface():
