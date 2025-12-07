@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctnsyjltqsgmp"
+path="res://.godot/imported/Wind Waker The Great Sea (Ocean) Music Extended.mp3-f6967c9aacfe095c61a5089989179ce3.mp3str"
+
+[deps]
+
+source_file="res://src/Assets/Musics/Wind Waker The Great Sea (Ocean) Music Extended.mp3"
+dest_files=["res://.godot/imported/Wind Waker The Great Sea (Ocean) Music Extended.mp3-f6967c9aacfe095c61a5089989179ce3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

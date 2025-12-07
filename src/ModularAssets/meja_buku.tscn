@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://04y66fw83ucx"]
+[gd_scene load_steps=15 format=4 uid="uid://04y66fw83ucx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyns2"]
 resource_name = "Material.513"
@@ -38,6 +38,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_li3dg")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_kwkrq"]
+size = Vector3(37.71457, 0.15063477, 22.805176)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ohkw"]
 resource_name = "Material.532"
 cull_mode = 2
@@ -75,6 +78,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xp0f6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ddfgw"]
+size = Vector3(0.5064087, 11.872894, 1.9673767)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfr7p"]
 resource_name = "Material.530"
@@ -152,6 +158,12 @@ transform = Transform3D(0.24301684, 0, 0, 0, 2.478772, 0, 0, 0, 0.24301684, 0, 0
 mesh = SubResource("ArrayMesh_kwkrq")
 skeleton = NodePath("")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="meja/Cube_082"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="meja/Cube_082/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.989823, 0.9643913, 9.597412)
+shape = SubResource("BoxShape3D_kwkrq")
+
 [node name="kursi" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2, -2.75)
 
@@ -159,6 +171,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2, -2.75)
 transform = Transform3D(0.0059988857, -0.12597714, 1.065792, -1.3107091, -0.0017016557, -2.1119422e-07, 0.008379994, -0.17597303, -0.7629887, 0, 0, 0)
 mesh = SubResource("ArrayMesh_ddfgw")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="kursi/Cube_096"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="kursi/Cube_096/StaticBody3D"]
+transform = Transform3D(1, -3.2859039e-06, -1.18750776e-07, 3.2859039e-06, 1, 0, 1.18750776e-07, -3.9020363e-13, 1, 1.7521586, -4.696755, 0.0026812553)
+shape = SubResource("BoxShape3D_ddfgw")
 
 [node name="buku" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.25, 0)

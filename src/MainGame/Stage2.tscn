@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk2dvnjb8msbw"]
+
+[ext_resource type="PackedScene" uid="uid://svvl4cwxk2b5" path="res://src/WorldMap/world2.tscn" id="1_h17py"]
+[ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_nvukp"]
+
+[node name="Stage2" type="Node3D"]
+
+[node name="World2" parent="." instance=ExtResource("1_h17py")]
+
+[node name="Player" parent="." instance=ExtResource("2_nvukp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.75, 9.75, 3.75)

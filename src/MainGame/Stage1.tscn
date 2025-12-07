@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ccjrvycgp04o5"]
+[gd_scene load_steps=36 format=3 uid="uid://ccjrvycgp04o5"]
 
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_7mt63"]
 [ext_resource type="PackedScene" uid="uid://dcf0eohhud0s" path="res://src/Player/Enemy.tscn" id="3_5x8vi"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
 [ext_resource type="PackedScene" uid="uid://b3vfvf51qxhry" path="res://src/MapAssets/enemy/bee/BeeEnemy.tscn" id="14_084w1"]
 [ext_resource type="PackedScene" uid="uid://04y66fw83ucx" path="res://src/ModularAssets/meja_buku.tscn" id="15_22fmn"]
+[ext_resource type="PackedScene" uid="uid://bjxta848gw2cn" path="res://src/ModularAssets/batu.tscn" id="16_g70w0"]
+[ext_resource type="Script" uid="uid://6yumj263pmwe" path="res://src/MainGame/Scripts/ganti_scene.gd" id="17_vlkwk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mt63"]
 size = Vector3(9.48, 2.26, 4.39)
@@ -134,13 +136,16 @@ face_vertex_data = {
 &"vertex_index": SubResource("Resource_0fy4s")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vlkwk"]
+size = Vector3(8.5, 1, 5.25)
+
 [node name="Stage1" type="Node3D"]
 
 [node name="BeeEnemy" parent="." instance=ExtResource("14_084w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.47478, 9.303343, 31.007936)
 
 [node name="player" parent="." instance=ExtResource("2_7mt63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.039444, 2.044012, 1.4138718)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 229.28944, 10.294012, 26.663872)
 
 [node name="enemy" parent="." instance=ExtResource("3_5x8vi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89032, 1.8559294, -4)
@@ -216,3 +221,14 @@ clouds = [NodePath("..")]
 
 [node name="MejaBuku" parent="." instance=ExtResource("15_22fmn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.5, 11.25, 35.5)
+
+[node name="Batu" parent="." instance=ExtResource("16_g70w0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.594505, 15, 13)
+
+[node name="gantiScene" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225.25, 14.5, 38.5)
+script = ExtResource("17_vlkwk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gantiScene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -0.625)
+shape = SubResource("BoxShape3D_vlkwk")
