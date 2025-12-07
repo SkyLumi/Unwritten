@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccjrvycgp04o5"]
+[gd_scene load_steps=29 format=3 uid="uid://ccjrvycgp04o5"]
 
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_7mt63"]
 [ext_resource type="PackedScene" uid="uid://dcf0eohhud0s" path="res://src/Player/Enemy.tscn" id="3_5x8vi"]
@@ -7,24 +7,144 @@
 [ext_resource type="Script" uid="uid://2f1ya3cmux7f" path="res://src/Scripts/cloud-obstacle.gd" id="5_5x8vi"]
 [ext_resource type="PackedScene" uid="uid://b1svudxu8jkq8" path="res://src/Assets/lever/lever.tscn" id="6_n8xrq"]
 [ext_resource type="Script" uid="uid://cf14f3gohtofa" path="res://src/Scripts/lever.gd" id="7_t7u0y"]
+[ext_resource type="Script" uid="uid://cnuul0qgrfka1" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="8_7iqet"]
+[ext_resource type="Script" uid="uid://ba85bm76fgqvq" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="9_m73e5"]
+[ext_resource type="Script" uid="uid://di2niteklmujg" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="10_084w1"]
+[ext_resource type="Script" uid="uid://cghh55ia1gk4l" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="11_22fmn"]
+[ext_resource type="Script" uid="uid://cdno2kbxy7x0t" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="12_g70w0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mt63"]
 size = Vector3(9.48, 2.26, 4.39)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7u0y"]
+size = Vector3(9.639969, 2.4595337, 4.155426)
+
+[sub_resource type="Resource" id="Resource_vlkwk"]
+script = ExtResource("9_m73e5")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_vevcq"]
+script = ExtResource("10_084w1")
+data = PackedInt32Array(-1, -1, -1, -1, -1, -1)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_nyloc"]
+script = ExtResource("9_m73e5")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_73eqi"]
+script = ExtResource("11_22fmn")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_k8ro3"]
+script = ExtResource("11_22fmn")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_ejd25"]
+script = ExtResource("9_m73e5")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_fm25q"]
+script = ExtResource("10_084w1")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_e6yma"]
+script = ExtResource("10_084w1")
+data = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 7, 6, 4, 5, 7, 0, 3, 6)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_wpvkc"]
+script = ExtResource("11_22fmn")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_no2dp"]
+script = ExtResource("11_22fmn")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_x1jcp"]
+script = ExtResource("11_22fmn")
+data = PackedFloat32Array(6, -1, 3, 6, 1, 3, 6, 1, -3, 6, -1, -3, 0, 1, -3, 0, 1, 3, 0, -1, -3, 0, -1, 3)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_sgtc8"]
+script = ExtResource("9_m73e5")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_i4ccd"]
+script = ExtResource("12_g70w0")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 2, 1, 5, 5, 4, 6, 3, 4, 6, 7, 5, 0, 7, 7, 6)
+edge_face_indices = PackedInt32Array(0, 3, 0, 1, 0, 2, 0, 5, 1, 2, 1, 3, 1, 4, 2, 5, 2, 4, 3, 4, 3, 5, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 7, 6, 4, 5, 7, 0, 3, 6)
+vertex_data = {
+&"position": SubResource("Resource_x1jcp"),
+&"selected": SubResource("Resource_sgtc8")
+}
+edge_data = {
+&"selected": SubResource("Resource_vlkwk")
+}
+face_data = {
+&"color": SubResource("Resource_73eqi"),
+&"material_index": SubResource("Resource_vevcq"),
+&"selected": SubResource("Resource_ejd25"),
+&"uv_transform": SubResource("Resource_k8ro3"),
+&"visible": SubResource("Resource_nyloc")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_wpvkc"),
+&"face_index": SubResource("Resource_fm25q"),
+&"normal": SubResource("Resource_no2dp"),
+&"vertex_index": SubResource("Resource_e6yma")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_roafh"]
+size = Vector3(6.454895, 1.3571777, 5.6904297)
+
 [node name="Stage1" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("2_7mt63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.380257, 5.9587107, 46.7015)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.11799, 10.198156, 19.030842)
 
 [node name="enemy" parent="." instance=ExtResource("3_5x8vi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89032, 1.8559294, -4)
 
 [node name="world" parent="." instance=ExtResource("3_xfnad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0971756, 0.0057268143, 0.018348694)
 
 [node name="Moving-Cloud-1" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.834206, -10.654402, 34.125217)
 script = ExtResource("5_5x8vi")
-amplitude = 7.0
+amplitude = 8.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Moving-Cloud-1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.702087, 8.169643, 21.038681)
@@ -35,4 +155,34 @@ shape = SubResource("BoxShape3D_7mt63")
 [node name="lever" parent="." node_paths=PackedStringArray("clouds") instance=ExtResource("6_n8xrq")]
 transform = Transform3D(-3.457571e-07, -7.91, 3.457571e-07, 0, -3.457571e-07, -7.91, 7.91, -3.457571e-07, 1.5113522e-14, 66.14062, 6.412453, 46.998714)
 script = ExtResource("7_t7u0y")
-clouds = [NodePath("../Moving-Cloud-1"), null]
+clouds = [NodePath("../Moving-Cloud-1"), NodePath("../Moving-Cloud-2")]
+
+[node name="Moving-Cloud-2" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.44363, -10.646927, 14.849297)
+script = ExtResource("5_5x8vi")
+amplitude = 9.5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Moving-Cloud-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.776497, 8.022021, 38.6374)
+shape = SubResource("BoxShape3D_t7u0y")
+
+[node name="awan-level1" parent="Moving-Cloud-2" instance=ExtResource("4_7mt63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.566307)
+
+[node name="lever2" parent="." node_paths=PackedStringArray("clouds") instance=ExtResource("6_n8xrq")]
+transform = Transform3D(-2.360415e-07, 5.3991776, -0.0942427, 0, -0.0942427, -5.3991776, -5.4, -2.3600555e-07, 4.1194794e-09, 86.057335, 10.223682, 16.614216)
+script = ExtResource("7_t7u0y")
+clouds = [NodePath("../Moving-Platform-1")]
+
+[node name="Moving-Platform-1" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.097176, 8.005727, 13.018349)
+script = ExtResource("5_5x8vi")
+amplitude = 8.0
+
+[node name="Block_1" type="Node3D" parent="Moving-Platform-1"]
+script = ExtResource("8_7iqet")
+mesh_vector_data = SubResource("Resource_i4ccd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Moving-Platform-1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7809143, 0.17858887, 0.1743164)
+shape = SubResource("BoxShape3D_roafh")
