@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ccjrvycgp04o5"]
+[gd_scene load_steps=33 format=3 uid="uid://ccjrvycgp04o5"]
 
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_7mt63"]
 [ext_resource type="PackedScene" uid="uid://dcf0eohhud0s" path="res://src/Player/Enemy.tscn" id="3_5x8vi"]
@@ -12,8 +12,9 @@
 [ext_resource type="Script" uid="uid://di2niteklmujg" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="10_084w1"]
 [ext_resource type="Script" uid="uid://cghh55ia1gk4l" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="11_22fmn"]
 [ext_resource type="Script" uid="uid://cdno2kbxy7x0t" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="12_g70w0"]
-[ext_resource type="Script" uid="uid://dq8thuvciiv8s" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
+[ext_resource type="Script" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
 [ext_resource type="PackedScene" uid="uid://b3vfvf51qxhry" path="res://src/MapAssets/enemy/bee/BeeEnemy.tscn" id="14_084w1"]
+[ext_resource type="PackedScene" uid="uid://04y66fw83ucx" path="res://src/ModularAssets/meja_buku.tscn" id="15_22fmn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mt63"]
 size = Vector3(9.48, 2.26, 4.39)
@@ -21,116 +22,10 @@ size = Vector3(9.48, 2.26, 4.39)
 [sub_resource type="BoxShape3D" id="BoxShape3D_t7u0y"]
 size = Vector3(9.639969, 2.4595337, 4.155426)
 
-[sub_resource type="Resource" id="Resource_vlkwk"]
-script = ExtResource("9_m73e5")
-data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-name = &"selected"
-
-[sub_resource type="Resource" id="Resource_73eqi"]
-script = ExtResource("11_22fmn")
-data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-name = &"color"
-data_type = 4
-stride = 4
-
-[sub_resource type="Resource" id="Resource_vevcq"]
-script = ExtResource("10_084w1")
-data = PackedInt32Array(-1, -1, -1, -1, -1, -1)
-name = &"material_index"
-data_type = 1
-
-[sub_resource type="Resource" id="Resource_ejd25"]
-script = ExtResource("9_m73e5")
-data = PackedByteArray(0, 0, 0, 0, 0, 0)
-name = &"selected"
-
-[sub_resource type="Resource" id="Resource_k8ro3"]
-script = ExtResource("11_22fmn")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-data_type = 8
-stride = 6
-
-[sub_resource type="Resource" id="Resource_nyloc"]
-script = ExtResource("9_m73e5")
-data = PackedByteArray(1, 1, 1, 1, 1, 1)
-name = &"visible"
-
-[sub_resource type="Resource" id="Resource_wpvkc"]
-script = ExtResource("11_22fmn")
-data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
-name = &"color"
-data_type = 4
-stride = 4
-
-[sub_resource type="Resource" id="Resource_fm25q"]
-script = ExtResource("10_084w1")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-data_type = 1
-
-[sub_resource type="Resource" id="Resource_no2dp"]
-script = ExtResource("11_22fmn")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0)
-name = &"normal"
-data_type = 6
-stride = 3
-
-[sub_resource type="Resource" id="Resource_e6yma"]
-script = ExtResource("10_084w1")
-data = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 7, 6, 4, 5, 7, 0, 3, 6)
-name = &"vertex_index"
-data_type = 1
-
-[sub_resource type="Resource" id="Resource_x1jcp"]
-script = ExtResource("11_22fmn")
-data = PackedFloat32Array(6, -1, 3, 6, 1, 3, 6, 1, -3, 6, -1, -3, 0, 1, -3, 0, 1, 3, 0, -1, -3, 0, -1, 3)
-name = &"position"
-data_type = 6
-stride = 3
-
-[sub_resource type="Resource" id="Resource_sgtc8"]
-script = ExtResource("9_m73e5")
-data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
-name = &"selected"
-
-[sub_resource type="Resource" id="Resource_i4ccd"]
-script = ExtResource("12_g70w0")
-num_vertices = 8
-num_edges = 12
-num_faces = 6
-num_face_vertices = 24
-active_vertex = -1
-active_edge = -1
-active_face = -1
-active_face_vertex = -1
-edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 2, 1, 5, 5, 4, 6, 3, 4, 6, 7, 5, 0, 7, 7, 6)
-edge_face_indices = PackedInt32Array(0, 3, 0, 1, 0, 2, 0, 5, 1, 2, 1, 3, 1, 4, 2, 5, 2, 4, 3, 4, 3, 5, 4, 5)
-face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
-face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 7, 6, 4, 5, 7, 0, 3, 6)
-vertex_data = {
-&"position": SubResource("Resource_x1jcp"),
-&"selected": SubResource("Resource_sgtc8")
-}
-edge_data = {
-&"selected": SubResource("Resource_vlkwk")
-}
-face_data = {
-&"color": SubResource("Resource_73eqi"),
-&"material_index": SubResource("Resource_vevcq"),
-&"selected": SubResource("Resource_ejd25"),
-&"uv_transform": SubResource("Resource_k8ro3"),
-&"visible": SubResource("Resource_nyloc")
-}
-face_vertex_data = {
-&"color": SubResource("Resource_wpvkc"),
-&"face_index": SubResource("Resource_fm25q"),
-&"normal": SubResource("Resource_no2dp"),
-&"vertex_index": SubResource("Resource_e6yma")
-}
+[sub_resource type="BoxMesh" id="BoxMesh_084w1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_roafh"]
-size = Vector3(4.0370636, 1.3571777, 4.257019)
+size = Vector3(5, 1, 5.25)
 
 [sub_resource type="Resource" id="Resource_qpj5j"]
 script = ExtResource("9_m73e5")
@@ -245,7 +140,7 @@ face_vertex_data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 232.47478, 9.303343, 31.007936)
 
 [node name="player" parent="." instance=ExtResource("2_7mt63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 227.78944, 14.794012, 32.16387)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.039444, 2.044012, 1.4138718)
 
 [node name="enemy" parent="." instance=ExtResource("3_5x8vi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89032, 1.8559294, -4)
@@ -291,12 +186,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.097176, 8.005727, 13.01834
 script = ExtResource("5_5x8vi")
 amplitude = 8.0
 
-[node name="vertical-platform" type="Node3D" parent="Moving-Platform-1"]
-script = ExtResource("8_7iqet")
-mesh_vector_data = SubResource("Resource_i4ccd")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Moving-Platform-1"]
+transform = Transform3D(5.13, 0, 0, 0, 1, 0, 0, 0, 5.4, 3.25, -0.25, -0.25)
+mesh = SubResource("BoxMesh_084w1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Moving-Platform-1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7809143, 0.17858887, 0.1743164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2623825, -0.25, -0.32217407)
 shape = SubResource("BoxShape3D_roafh")
 
 [node name="Moving-Platform-2" type="AnimatableBody3D" parent="."]
@@ -318,3 +213,6 @@ shape = SubResource("BoxShape3D_roafh")
 transform = Transform3D(-5.399028, 0, -0.10244174, 0, 5.3999996, 0, 0.10244174, 0, -5.399028, -1.0167999, -0.09936333, 0.03625679)
 script = ExtResource("7_t7u0y")
 clouds = [NodePath("..")]
+
+[node name="MejaBuku" parent="." instance=ExtResource("15_22fmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.5, 11.25, 35.5)

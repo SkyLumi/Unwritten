@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjxta848gw2cn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dramm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8dh2"]
+albedo_color = Color(0.446777, 0.44677705, 0.44677705, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ud3kd"]
+size = Vector3(4, 4, 4)
+
+[node name="Batu" type="AnimatableBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh = SubResource("BoxMesh_dramm")
+surface_material_override/0 = SubResource("StandardMaterial3D_q8dh2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ud3kd")
