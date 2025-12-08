@@ -1,0 +1,17 @@
+# STAGE 1 - Awal
+background village_morning
+join mc 1
+
+mc: Aku.. dimana?
+mc: Ini... apakah ini nyata?
+# action: lihat sekitar (gameplay hint: enable look-around)
+mc: Ini... Desa? Tapi, kenapa aku bisa disini?
+mc: Aku punya pedang di tanganku, tapi apa yang harus dilakukan?
+mc: Ah, aku ingat sekarang! Kreator ku, dia butuh bantuanku. Aku harus menolong dia dari kesedihannya!
+mc: Tapi.. bagaimana aku bisa meraihnya? Aku ragu deh.
+mc: ...
+# hint: ada jalan menuju tujuan
+mc: Sepertinya ada jalan kesana, lebih baik mencoba daripada tidak sama sekali!
+
+# Parkour sequence (gameplay) -> selesai -> scene cow encounter
+jump stage_1_cow

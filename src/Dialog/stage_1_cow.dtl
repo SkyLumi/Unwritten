@@ -1,0 +1,25 @@
+# STAGE 1 - Encounter: Sapi
+background field_day
+join mc 1
+join cow 2
+
+mc: Hah? Sapi?
+cow: Moo...?
+mc: E-ehh?
+cow: Moo! Moo!
+
+# gameplay: spawn enemy 'cow' (combat encounter)
+# after combat:
+mc: A-apa itu tadi, siapa sangka dia tidak jinak..
+mc: Hmm? Apa ini?
+
+# Player mengingat sesuatu untuk stage berikutnya (narrative hint)
+mc: Ah.. Aku.. Aku teringat sesuatu.
+mc: Dia—kreator ku—adalah penyayang hewan. Aku selalu melihat dia di ladang.
+mc: Di bawah pohon aku lihat dia suka memberi makan dan sayang pada sapi-sapinya.
+mc: Kira-kira kenapa dia bisa kehilangan motivasinya ya?
+mc: Hmm..
+mc: H-hah, oke, sekarang sudah waktunya aku tetap maju!
+
+# Lanjut ke bukit
+jump stage_1_hill
