@@ -10,4 +10,4 @@ func _on_body_entered(body):
 		call_deferred("_ganti_scene")
 	 
 func _ganti_scene():
-	get_tree().change_scene_to_file(next_scene)
+	SceneManager.load_scene(next_scene)

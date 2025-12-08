@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlql22jebfurh"]
+
+[ext_resource type="Texture2D" uid="uid://b2d1yq725gbrg" path="res://src/Assets/UI Assets/UI Start/TitleScreen.png" id="1_iv7dx"]
+[ext_resource type="Texture2D" uid="uid://0urc0nu8ccx7" path="res://src/Assets/UI Assets/UI Start/ButtonMulai.png" id="2_ilr13"]
+[ext_resource type="Texture2D" uid="uid://ebt7mqo53qcr" path="res://src/Assets/UI Assets/UI Start/ButtonExit.png" id="3_do37m"]
+[ext_resource type="Script" uid="uid://b13k1ekntjiwq" path="res://src/UIScene/Scripts/start.gd" id="3_ilr13"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_et3ax"]
+specular_color = Color(0.36282945, 0.36282945, 0.36282945, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icyju"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iv7dx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iv7dx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilr13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do37m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+draw_center = false
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_et3ax")
+
+[node name="Judul" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_right = 1444.4878
+offset_bottom = 592.0
+texture = ExtResource("1_iv7dx")
+expand_mode = 2
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 592.0
+offset_right = 1280.0
+offset_bottom = 776.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icyju")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_iv7dx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iv7dx")
+icon = ExtResource("2_ilr13")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_ilr13")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 824.0
+offset_right = 1272.0
+offset_bottom = 1000.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_icyju")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ilr13")
+theme_override_styles/hover = SubResource("StyleBoxFlat_do37m")
+icon = ExtResource("3_do37m")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Start" to="Start" method="_on_button_pressed"]

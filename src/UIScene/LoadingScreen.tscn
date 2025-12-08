@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bln4yrsukmig8"]
+
+[ext_resource type="Texture2D" uid="uid://b02xbds430nya" path="res://src/Assets/UI Assets/Pause Container/Doodle.png" id="1_7um0t"]
+[ext_resource type="Texture2D" uid="uid://cimnbyd0m0eqp" path="res://src/Assets/UI Assets/Pause Container/Pause Container.png" id="2_ipbdp"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_eccc6"]
+specular_color = Color(0, 0, 0, 1)
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_eccc6")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 920.0
+offset_right = 1472.0
+offset_bottom = 947.0
+
+[node name="Doodle" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 120.0
+offset_right = 1618.0
+offset_bottom = 485.0
+texture = ExtResource("1_7um0t")
+
+[node name="Kertas" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 272.0
+offset_right = 1037.0
+offset_bottom = 760.0
+texture = ExtResource("2_ipbdp")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 352.0
+offset_right = 926.0
+offset_bottom = 410.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "Nabil, Bantuin ak ngoding yah"

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 CyclopsAutoload="*res://addons/cyclops_level_builder/cyclops_global_scene.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+SceneManager="*res://src/Scripts/SceneManager.gd"
 
 [dialogic]
 
@@ -32,11 +33,13 @@ layout/style_directory={}
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/size/mode=3
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Godot-Mixamo-Animation-Retargeter/addons/mixamo_animation_retargeter/plugin.cfg", "res://addons/cyclops_level_builder/plugin.cfg", "res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/cyclops_level_builder/plugin.cfg", "res://addons/dialogic/plugin.cfg")
 
 [input]
 

@@ -13,3 +13,4 @@ func _on_body_entered(body):
 func _start_dialog():
 	var dialog = Dialogic.start(dialog_path)
 	get_tree().current_scene.add_child(dialog)
+	queue_free()
