@@ -35,6 +35,12 @@ func _ready():
 	damage_bar.add_theme_stylebox_override("background", bg.duplicate())
 	
 	_sync_bar_from_resources()
+	
+	# Fix ViewportTexture path issues by assigning at runtime
+	var sprite = get_node_or_null("Sprite3D")
+	var vp = get_node_or_null("SubViewport")
+	if sprite and vp:
+		sprite.texture = vp.get_texture()
 
 # Keeps billboard facing camera when parented under the enemy.
 func _process(delta):

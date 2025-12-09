@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcf0eohhud0s"]
+[gd_scene load_steps=8 format=3 uid="uid://dcf0eohhud0s"]
 
 [ext_resource type="Script" uid="uid://bepxcserhjcny" path="res://src/Player/Player.gd" id="1_1enemy"]
 [ext_resource type="PackedScene" uid="uid://dkl1i7wju7vba" path="res://src/Player/Visuals/PlayerVisuals.tscn" id="2_visuals"]
@@ -7,8 +7,7 @@
 [ext_resource type="Script" uid="uid://b7au3oktvuhky" path="res://src/Player/Camera.gd" id="5_camera"]
 [ext_resource type="Script" uid="uid://dcpr8rygwakx6" path="res://src/Player/EnemyHealthBillboard.gd" id="6_billboard"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_health"]
-viewport_path = NodePath("HealthBillboard/SubViewport")
+
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_enemy"]
 radius = 0.2
@@ -83,7 +82,6 @@ modulate = Color(1, 1, 1, 0.95)
 pixel_size = 0.006
 billboard = 2
 texture_filter = 2
-texture = SubResource("ViewportTexture_health")
 
 [node name="Input" type="Node" parent="."]
 script = ExtResource("4_aiinput")

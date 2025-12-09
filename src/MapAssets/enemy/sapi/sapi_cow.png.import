@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5b10muqmw1"
-path.s3tc="res://.godot/imported/sapi-idle_cow.png-0718451c37e4b03b9b5f3b98252df569.s3tc.ctex"
+uid="uid://dmdjh31gw1wt"
+path.s3tc="res://.godot/imported/sapi_cow.png-0b9870f5217401056a1aa3d1d761a978.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://src/MapAssets/enemy/sapi/sapi-idle_cow.png"
-dest_files=["res://.godot/imported/sapi-idle_cow.png-0718451c37e4b03b9b5f3b98252df569.s3tc.ctex"]
+source_file="res://src/MapAssets/enemy/sapi/sapi_cow.png"
+dest_files=["res://.godot/imported/sapi_cow.png-0b9870f5217401056a1aa3d1d761a978.s3tc.ctex"]
 
 [params]
 
