@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf65u5owfy44w"]
+
+[ext_resource type="MeshLibrary" uid="uid://dehiepdo4haso" path="res://src/Assets/Tilemaps-fix/tiles.tres" id="1_wh6o6"]
+
+[node name="FinalStage" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_wh6o6")

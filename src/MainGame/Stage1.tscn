@@ -13,10 +13,10 @@
 [ext_resource type="Script" uid="uid://di2niteklmujg" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="10_084w1"]
 [ext_resource type="Script" uid="uid://cghh55ia1gk4l" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="11_22fmn"]
 [ext_resource type="Script" uid="uid://cdno2kbxy7x0t" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="12_g70w0"]
-[ext_resource type="Script" uid="uid://dq8thuvciiv8s" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
+[ext_resource type="Script" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
 [ext_resource type="PackedScene" uid="uid://04y66fw83ucx" path="res://src/ModularAssets/meja_buku.tscn" id="15_22fmn"]
 [ext_resource type="PackedScene" uid="uid://bjxta848gw2cn" path="res://src/ModularAssets/batu.tscn" id="16_g70w0"]
-[ext_resource type="Script" uid="uid://xd8g8id580un" path="res://src/Scripts/Rock-Obstacle.gd" id="17_nyloc"]
+[ext_resource type="Script" path="res://src/Scripts/Rock-Obstacle.gd" id="17_nyloc"]
 [ext_resource type="Script" uid="uid://6yumj263pmwe" path="res://src/MainGame/Scripts/ganti_scene.gd" id="17_vlkwk"]
 [ext_resource type="Script" uid="uid://chiut7eymg84b" path="res://src/Dialog/Scripts/stage_1_timeline_1.gd" id="18_vevcq"]
 [ext_resource type="PackedScene" path="res://src/Interactables/Chest/Chest.tscn" id="20_73eqi"]
@@ -160,13 +160,12 @@ region_merge_size = 37.73
 [node name="Stage1" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("2_7mt63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 231.80319, 13.186607, 28.671122)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.303192, 3.1866074, 1.4211216)
 
 [node name="enemy" parent="." instance=ExtResource("3_5x8vi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.85968, 6.1059294, -1)
 
 [node name="world" parent="." instance=ExtResource("3_xfnad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5569105, 0.028366089, 0.93783)
 
 [node name="bee3" parent="world" instance=ExtResource("1_73eqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6219177, -2.1402636, 6.6902885)
@@ -241,10 +240,10 @@ clouds = [NodePath("..")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.5, 11.25, 35.5)
 
 [node name="Batu" parent="." instance=ExtResource("16_g70w0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.594505, 10.249294, 13)
+transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 102.594505, 10.249294, 13)
 script = ExtResource("17_nyloc")
 amplitude = 15.0
-speed = 8.0
+speed = 50.0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Batu"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
@@ -268,17 +267,17 @@ shape = SubResource("BoxShape3D_nyloc")
 debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
 
 [node name="Batu2" parent="." instance=ExtResource("16_g70w0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.07429, 9.680614, 12.457233)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 116.07429, 9.680614, 12.957233)
 script = ExtResource("17_nyloc")
 amplitude = 15.0
-speed = 9.0
+speed = 20.0
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Batu2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
 shape = SubResource("BoxShape3D_73eqi")
 
 [node name="Batu3" parent="." instance=ExtResource("16_g70w0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.49233, 9.588718, 13)
+transform = Transform3D(1.515, 0, 0, 0, 1.515, 0, 0, 0, 1.515, 127.49233, 9.588718, 13)
 script = ExtResource("17_nyloc")
 amplitude = 15.0
 speed = 10.0
