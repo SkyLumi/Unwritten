@@ -108,6 +108,13 @@ func lose_health(amount: float):
 		resources.health = 0
 	print("MCModel.lose_health called: -", amount, " HP. Current: ", resources.health)
 
+# Validates and executes a bounce/launch
+func bounce(force: float = 15.0):
+	print("MCModel.bounce called with force: ", force)
+	player.velocity.y = force
+	jump_count = 0 # Reset jumps so player can double jump after bounce
+	_start_state(State.JUMP)
+
 func update(input: InputPackage, delta: float):
 	state_time += delta
 	

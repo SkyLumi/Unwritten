@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bf810fyivimu7"]
+
+[ext_resource type="PackedScene" uid="uid://cvocrsjnrlgyg" path="res://src/MapAssets/jamur/Jamur.glb" id="1_f6drr"]
+[ext_resource type="Script" uid="uid://bd0drmkl7hqda" path="res://src/MapAssets/jamur/Jamur.gd" id="2_bounce"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bounce"]
+radius = 1.5
+
+[node name="Jamur" instance=ExtResource("1_f6drr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1880016, 0, 1.4122176)
+
+[node name="Sphere_001" parent="." index="1"]
+transform = Transform3D(2.0072148, -0.3305341, 0.0067428714, 0.33053407, 2.0055335, -0.08241146, 0.006742869, 0.08241146, 2.0325778, -2.180094, 2.8490539, -1.4137024)
+
+[node name="BounceArea" type="Area3D" parent="." index="2"]
+script = ExtResource("2_bounce")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BounceArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 5, -1.4)
+shape = SubResource("SphereShape3D_bounce")
