@@ -1,0 +1,21 @@
+# STAGE 2 - Menuju Sekolah
+background school_path
+join mc 1
+
+mc: Ah, aku tau, sekolah ini punya kenangan yang buruk.
+mc: Dia pernah di-bully, ditertawakan oleh teman sekelasnya cuma karena dia dari keluarga yang kurang mampu.
+mc: Teman-temannya begitu kejam, mereka tidak boleh meremehkan orang semudah itu.
+mc: Aku tidak boleh membiarkan semua ini.
+
+# MC menemukan diary/kertas lagi
+# item obtained: diary_page_2
+mc: (membuka kertas)
+mc: (membaca) "Hari ini aku rasanya gak mau sekolah lagi... kenapa aku disalahkan atas kemiskinan orang tua ku sendiri?..."
+mc: Kreator...
+mc: Rasanya berat sekali tiap aku baca diary ini...
+mc: Kenapa dunia ini begitu kejam, apakah semua orang juga seperti itu?
+mc: Dasar orang-orang jahat! Aku sudah tau aku harus apa.
+mc: Aku akan lanjut untuk meraihnya!
+
+# Jembatan (hati-hati)
+jump stage_2_bridge

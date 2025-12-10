@@ -1,0 +1,20 @@
+# CUTSCENE INTRO
+background intro_room
+join creator 1
+
+creator: Apa gunanya..
+creator: Apa gunanya semua ini…
+creator: 17 tahun ku belajar ini, itu, semuanya sia-sia…
+# action: Creator mengepalkan kertas hasil gambar dan menaruhnya di buku sketsa
+creator: *marah* ... (menunduk ke bawah)
+creator: Kalau memang ini semua tidak ada artinya, mending aku berhenti saja.
+# sfx: door_slam
+creator: *pergi dan membanting pintu*
+leave creator
+
+# MC muncul sebagai entitas dari kertas
+join mc 2
+mc: (suara lembut) Aku... hidup dari kertas.
+
+# cutscene selesai -> lanjut Stage 1
+jump stage_1

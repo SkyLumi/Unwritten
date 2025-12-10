@@ -1,0 +1,23 @@
+# STAGE 1 - Gudang
+background barn_interior
+join mc 1
+
+mc: Lagi-lagi tempat yang familiar...
+mc: Aku... berusaha ingat kembali, gudang ini...
+mc: Ah iya, gudang tempat penyimpanan ini.
+mc: Kreator suka sekali pergi ke sini saat dia lagi sedih. Dia menggambar ku dalam diam, sendirian...
+mc: Kenapa ya, setiap kali aku mengingat apa yang terjadi, aku merasakan... kesedihan di dalamnya...
+mc: Apakah... ini yang dirasakan oleh kreatorku?
+mc: Aku ingin sekali bertemu dengannya! Harus ku beri tahu, dia bukanlah orang yang buruk sama sekali!
+
+# lebah muncul (enemy)
+join bee 2
+mc: Ah! Ada binatang jahat mau mengejarku!
+mc: Aku harus bersiap dengan pedangku!
+
+# gameplay: spawn bees (combat)
+# lebah mati
+mc: (menyelesaikan serangan terhadap lebah)
+
+# Stage 1 selesai
+jump stage_2_intro
