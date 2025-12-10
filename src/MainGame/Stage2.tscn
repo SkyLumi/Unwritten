@@ -21,19 +21,19 @@ size = Vector3(4.2714844, 3.8394775, 4.3360596)
 
 [node name="Stage2" type="Node3D"]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="ganti_scene" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.23746, 12.275245, 11.484632)
 script = ExtResource("8_xjujp")
 next_scene = "res://src/MainGame/final_stage.tscn"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ganti_scene"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26818848, -0.21797752, 0.8600817)
 shape = SubResource("BoxShape3D_5xrnw")
 
 [node name="World2" parent="." instance=ExtResource("1_h17py")]
 
-[node name="Player" parent="." instance=ExtResource("2_nvukp")]
-transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 291.2998, 15.98691, 33.78261)
+[node name="player" parent="." instance=ExtResource("2_nvukp")]
+transform = Transform3D(-0.021981094, 0, -0.41942438, 0, 0.42, 0, 0.41942438, 0, -0.021981094, 149.11784, 11.673347, 0.4415989)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ixyxl")
