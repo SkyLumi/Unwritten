@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://mc_model_new"]
+
+[ext_resource type="Script" path="res://src/Player/MC/MCModel.gd" id="1_model"]
+
+[node name="MCModel" type="Node"]
+script = ExtResource("1_model")

@@ -118,14 +118,27 @@ func attack():
 	if target and global_position.distance_to(target.global_position) <= attack_radius + 1.0:
 		var model = target.get_node_or_null("Model")
 		if model:
-			var resources = model.get_node_or_null("Resources")
-			if resources and resources.has_method("lose_health"):
-				resources.lose_health(damage)
-				print("Bee dealing damage to player: ", damage)
+			print("Bee: Found model, attempting damage...")
+			# Method 1: Direct lose_health on model (MCModel style)
+			if model.has_method("lose_health"):
+				model.lose_health(damage)
+				print("Bee dealing damage via model.lose_health: ", damage)
+			# Method 2: Try Resources property (MCModel style)
+			elif model.get("Resources") != null:
+				var res = model.Resources
+				if res and res.has_method("lose_health"):
+					res.lose_health(damage)
+					print("Bee dealing damage via Resources.lose_health: ", damage)
+			# Method 3: Try as child node (HumanoidModel style)  
 			else:
-				print("Target Model has no Resources or lose_health method")
+				var resources = model.get_node_or_null("Resources")
+				if resources and resources.has_method("lose_health"):
+					resources.lose_health(damage)
+					print("Bee dealing damage via child node: ", damage)
+				else:
+					print("Bee: Could not find any way to damage player!")
 		else:
-			print("Target has no Model")
+			print("Bee: Target has no Model")
 	
 	# Start cooldown
 	attack_timer.start()
@@ -157,8 +170,8 @@ func lose_health(amount: int):
 
 func _process(delta):
 	# Periodic debug print (approx every 1 sec)
-	if Engine.get_physics_frames() % 60 == 0:
-		print("DEBUG HEARTBEAT: Bee Health: ", current_health, "/", max_health)
+	#if Engine.get_physics_frames() % 60 == 0:
+		#print("DEBUG HEARTBEAT: Bee Health: ", current_health, "/", max_health)
 
 	# Animate Damage Bar (catch up effect)
 	if health_billboard:

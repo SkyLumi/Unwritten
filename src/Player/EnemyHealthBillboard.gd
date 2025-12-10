@@ -1,8 +1,8 @@
 @tool
 extends Node3D
 
-@export var resources: HumanoidResources
-@export_node_path("HumanoidResources") var resources_path: NodePath
+@export var resources: Node
+@export_node_path("Node") var resources_path: NodePath
 @export var target: Node3D
 @export var target_group: String = "player"
 @export var show_distance: float = 10.0
@@ -82,10 +82,10 @@ func _resolve_resources():
 	if resources:
 		return
 	if resources_path != NodePath() and has_node(resources_path):
-		resources = get_node(resources_path) as HumanoidResources
+		resources = get_node(resources_path)
 		return
 	var candidate := get_node_or_null("../Model/Resources")
-	if candidate and candidate is HumanoidResources:
+	if candidate:
 		resources = candidate
 
 

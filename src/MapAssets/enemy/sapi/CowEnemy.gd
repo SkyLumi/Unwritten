@@ -126,10 +126,25 @@ func attack():
 	if target and global_position.distance_to(target.global_position) <= attack_radius + 1.0:
 		var model = target.get_node_or_null("Model")
 		if model:
-			var resources = model.get_node_or_null("Resources")
-			if resources and resources.has_method("lose_health"):
-				resources.lose_health(damage)
-				print("Cow dealing damage to player: ", damage)
+			print("CowEnemy: Found model, attempting damage...")
+			# Method 1: Direct lose_health on model (if MCModel exposes it directly)
+			if model.has_method("lose_health"):
+				model.lose_health(damage)
+				print("Cow dealing damage via model.lose_health: ", damage)
+			# Method 2: Try Resources property (MCModel style)
+			elif model.get("Resources") != null:
+				var res = model.Resources
+				if res and res.has_method("lose_health"):
+					res.lose_health(damage)
+					print("Cow dealing damage via Resources.lose_health: ", damage)
+			# Method 3: Try as child node (HumanoidModel style)  
+			else:
+				var resources = model.get_node_or_null("Resources")
+				if resources and resources.has_method("lose_health"):
+					resources.lose_health(damage)
+					print("Cow dealing damage via child node: ", damage)
+				else:
+					print("CowEnemy: Could not find any way to damage player!")
 	
 	# Start cooldown
 	attack_timer.start()

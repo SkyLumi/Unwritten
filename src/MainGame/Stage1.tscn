@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ccjrvycgp04o5"]
+[gd_scene load_steps=55 format=3 uid="uid://ccjrvycgp04o5"]
 
 [ext_resource type="PackedScene" uid="uid://8cj7achnaca" path="res://src/MapAssets/enemy/bee/bee.tscn" id="1_73eqi"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_7mt63"]
@@ -22,6 +22,9 @@
 [ext_resource type="PackedScene" path="res://src/Interactables/Chest/Chest.tscn" id="20_73eqi"]
 [ext_resource type="PackedScene" uid="uid://bsr14fuufq7kj" path="res://src/MapAssets/enemy/sapi/CowEnemy.tscn" id="21_k8ro3"]
 [ext_resource type="Script" uid="uid://dcpr8rygwakx6" path="res://src/Player/EnemyHealthBillboard.gd" id="22_billboard"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyloc"]
+size = Vector3(9, 1.75, 14)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fm25q"]
 
@@ -55,9 +58,6 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.05, 0.15, 0.05, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_no2dp"]
-viewport_path = NodePath("world/HealthBillboard/SubViewport")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_7mt63"]
 size = Vector3(9.48, 2.26, 4.39)
 
@@ -67,7 +67,7 @@ size = Vector3(9.639969, 2.4595337, 4.155426)
 [sub_resource type="BoxMesh" id="BoxMesh_084w1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_roafh"]
-size = Vector3(5, 1, 5.25)
+size = Vector3(6, 2, 6)
 
 [sub_resource type="Resource" id="Resource_qpj5j"]
 script = ExtResource("9_m73e5")
@@ -182,9 +182,6 @@ size = Vector3(4.2714844, 3.8394775, 4.3360596)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlkwk"]
 size = Vector3(8.5, 1, 5.25)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nyloc"]
-size = Vector3(18, 1.75, 24)
-
 [sub_resource type="NavigationMesh" id="NavigationMesh_73eqi"]
 vertices = PackedVector3Array(-30.925123, -2.4385066, -15.551699, -30.925123, -2.4385066, 17.448301, 4.574877, -2.4385066, 17.448301, 4.574877, -2.4385066, -15.551699)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
@@ -207,8 +204,18 @@ size = Vector3(10.06, 0.795, 13.77)
 
 [node name="Stage1" type="Node3D"]
 
+[node name="stage1-timeline2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 3.5, 0)
+script = ExtResource("18_vevcq")
+dialog_path = "res://src/Dialog/stage_1_cow.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stage1-timeline2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.875, 0.25)
+shape = SubResource("BoxShape3D_nyloc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
 [node name="player" parent="." instance=ExtResource("2_7mt63")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.303192, 8.186607, 14.42112)
+transform = Transform3D(-1.8358783e-08, 0, 0.42, 0, 0.42, 0, -0.42, 0, -1.8358783e-08, -1.6968079, 8.186607, -0.5788803)
 
 [node name="world" parent="." instance=ExtResource("3_xfnad")]
 
@@ -238,8 +245,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="HealthBillboard" type="Node3D" parent="world"]
-transform = Transform3D(-0.16687895, -0.15236269, -0.974134, 0, 0.9879882, -0.1545296, 0.9859774, -0.02578774, -0.16487443, 0, 1.5, 0)
-visible = false
+transform = Transform3D(0.11331074, 0.87794983, 0.4651498, 0, 0.46816483, -0.883641, -0.9935591, 0.100126036, 0.05304814, 0, 1.5, 0)
 script = ExtResource("22_billboard")
 show_distance = 15.0
 
@@ -266,7 +272,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_ejd25")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fm25q")
-value = 92.99
+value = 89.2
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]
@@ -294,13 +300,6 @@ theme_override_font_sizes/font_size = 12
 text = "100 / 100"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sprite3D" type="Sprite3D" parent="world/HealthBillboard"]
-modulate = Color(1, 1, 1, 0.95)
-pixel_size = 0.006
-billboard = 2
-texture_filter = 2
-texture = SubResource("ViewportTexture_no2dp")
 
 [node name="Moving-Cloud-1" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.834206, -10.654402, 34.125217)
@@ -330,26 +329,26 @@ shape = SubResource("BoxShape3D_t7u0y")
 [node name="awan-level1" parent="Moving-Cloud-2" instance=ExtResource("4_7mt63")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.566307)
 
-[node name="lever2" parent="." node_paths=PackedStringArray("clouds") instance=ExtResource("6_n8xrq")]
-transform = Transform3D(-2.360415e-07, 5.3991776, -0.0942427, 0, -0.0942427, -5.3991776, -5.4, -2.3600555e-07, 4.1194794e-09, 86.057335, 10.223682, 16.614216)
-script = ExtResource("7_t7u0y")
-clouds = [NodePath("../Moving-Platform-1")]
-
 [node name="Moving-Platform-1" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.097176, 8.005727, 13.018349)
 script = ExtResource("5_5x8vi")
 amplitude = 8.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Moving-Platform-1"]
-transform = Transform3D(5.13, 0, 0, 0, 1, 0, 0, 0, 5.4, 3.25, -0.25, -0.25)
+transform = Transform3D(6.1560006, 0, 0, 0, 1, 0, 0, 0, 5.94, 2.935, 0.39, -0.025)
 mesh = SubResource("BoxMesh_084w1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Moving-Platform-1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2623825, -0.25, -0.32217407)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9120026, -0.08500004, 0.05300045)
 shape = SubResource("BoxShape3D_roafh")
 
+[node name="lever2" parent="Moving-Platform-1" node_paths=PackedStringArray("clouds") instance=ExtResource("6_n8xrq")]
+transform = Transform3D(2.3604146e-07, -4.7208303e-07, 5.4, 4.72083e-07, 5.4, 4.72083e-07, -5.4, 4.7208297e-07, 2.360415e-07, 0.94, 0.898, -0.054)
+script = ExtResource("7_t7u0y")
+clouds = [NodePath("..")]
+
 [node name="Moving-Platform-2" type="AnimatableBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.16064, 17.2397, 24.440338)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.056, 16.98, 24.02)
 script = ExtResource("13_m73e5")
 movement_axis = 1
 amplitude = 15.1
@@ -360,7 +359,7 @@ script = ExtResource("8_7iqet")
 mesh_vector_data = SubResource("Resource_084w1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Moving-Platform-2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62519073, -0.6788025, -0.12521362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91000366, -1.0290003, -0.125)
 shape = SubResource("BoxShape3D_roafh")
 
 [node name="platform-lever" parent="Moving-Platform-2" node_paths=PackedStringArray("clouds") instance=ExtResource("6_n8xrq")]
@@ -394,7 +393,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 script = ExtResource("18_vevcq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="stage1-timeline1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.875, -1.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.875, -1.75)
 shape = SubResource("BoxShape3D_nyloc")
 debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
 
@@ -427,6 +426,7 @@ navigation_mesh = SubResource("NavigationMesh_73eqi")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D"]
 transform = Transform3D(36.505, 0, 0, 0, 0.175, 0, 0, 0, 33.92, -13.172623, -2.8510065, 0.9083004)
+visible = false
 mesh = SubResource("BoxMesh_73eqi")
 material = SubResource("StandardMaterial3D_k8ro3")
 
@@ -448,6 +448,7 @@ navigation_mesh = SubResource("NavigationMesh_k8ro3")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.48, -5)
+visible = false
 mesh = SubResource("BoxMesh_ejd25")
 material = SubResource("StandardMaterial3D_fm25q")
 

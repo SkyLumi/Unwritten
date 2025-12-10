@@ -23,33 +23,38 @@ func _ready():
 		hitbox.area_entered.connect(_on_area_entered)
 
 func _on_area_entered(area):
-	print("Area entered: ", area.name, " Type: ", area.get_class())
-	if area.get_script():
-		print("Script path: ", area.get_script().resource_path)
+	print("Lever: Area entered: ", area.name, " Groups: ", area.get_groups())
+	
+	# Check for player weapon (MCWeapon or Weapon) by group
+	# If it entered, it means an attack is happening (weapon only monitors during attacks)
+	if area.is_in_group("player_weapon"):
+		print("Lever: player_weapon detected - triggering toggle!")
+		# Prevent multiple hits per swing using hitbox_ignore_list
+		if area.get("hitbox_ignore_list") != null:
+			if area.hitbox_ignore_list.has(hitbox):
+				print("Lever: Already hit this swing, ignoring")
+				return
+			area.hitbox_ignore_list.append(hitbox)
+		toggle_lever()
+		return
 		
-	# Cek apakah yang masuk adalah Weapon
+	# Check for old Weapon class (legacy system - not in player_weapon group)
 	if area is Weapon:
 		var weapon = area as Weapon
 		var holder = weapon.holder
 		
-		# Cek apakah holder sedang melakukan move attack
-		# Kita bisa cek nama move atau properti lain
 		var is_attacking_move = false
 		if holder and holder.current_move:
 			var move_name = holder.current_move.move_name
-			# Daftar move yang dianggap attack
 			if "longsword" in move_name or "attack" in move_name or "slash" in move_name:
 				is_attacking_move = true
 				
-		print("Is Weapon! Move: ", holder.current_move.move_name if holder else "None", " Is Attack Move: ", is_attacking_move)
-		
 		if is_attacking_move:
-			# Cek agar tidak kena hit berkali-kali dalam satu serangan
 			if not area.hitbox_ignore_list.has(hitbox):
 				area.hitbox_ignore_list.append(hitbox)
 				toggle_lever()
 	else:
-		print("Not a Weapon")
+		print("Lever: Not a recognized weapon type")
 
 func toggle_lever():
 	# Debounce sederhana: kalau animasi lagi jalan, jangan terima input dulu

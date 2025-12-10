@@ -1,7 +1,7 @@
 extends Node
 class_name InputGatherer
 
-@onready var model : PlayerModel = $"../Model"
+@onready var model  = $"../Model"
 
 func gather_input() -> InputPackage:
 	var new_input = InputPackage.new()
@@ -31,7 +31,7 @@ func gather_input() -> InputPackage:
 	if Input.is_action_pressed("block"):
 		new_input.actions.append("block")
 	
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		if new_input.actions.has("sprint"):
 			new_input.actions.append("jump_sprint")
 		elif new_input.actions.has("walk") or new_input.input_direction != Vector2.ZERO:

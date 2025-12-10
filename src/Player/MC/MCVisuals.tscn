@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://mc_visuals_new"]
+
+[ext_resource type="Script" path="res://src/Player/MC/MCVisuals.gd" id="1_visuals"]
+[ext_resource type="PackedScene" uid="uid://c8l60rn8f4j7" path="res://src/Character/mc.tscn" id="2_mc"]
+[ext_resource type="Script" path="res://src/Player/MC/MCWeapon.gd" id="3_weapon"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_weapon"]
+size = Vector3(1.5, 1.5, 2.0)
+
+[node name="MCVisuals" type="Node3D"]
+script = ExtResource("1_visuals")
+
+[node name="mc" parent="." instance=ExtResource("2_mc")]
+
+[node name="WeaponHitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.8)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_weapon")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WeaponHitbox"]
+shape = SubResource("BoxShape3D_weapon")

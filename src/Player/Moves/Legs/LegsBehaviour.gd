@@ -2,7 +2,7 @@ extends Node
 class_name LegsBehaviour
 
 
-var model : PlayerModel
+var model # PlayerModel
 var moves_container : HumanoidStates
 var legs_manager : Legs
 var current_legs_move : Move

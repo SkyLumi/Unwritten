@@ -3,15 +3,15 @@ class_name Move
 
 var player : CharacterBody3D
 #var base_animator : AnimationPlayer
-var animator : SplitBodyAnimator # or BodyPartsBlender
+var animator # SplitBodyAnimator # or BodyPartsBlender
 var skeleton : Skeleton3D
-var resources : HumanoidResources
-var combat : HumanoidCombat
-var moves_data_repo : MovesDataRepository
-var container : HumanoidStates
+var resources # HumanoidResources
+var combat # HumanoidCombat
+var moves_data_repo # MovesDataRepository
+var container # HumanoidStates
 var area_awareness : AreaAwareness
 var legs : Legs
-var model : PlayerModel
+var model # PlayerModel
 #var left_wrist : BoneAttachment3D
 
 @export var tuning : MoveTuning = preload("res://src/Player/Moves/MoveTuning.tres")
