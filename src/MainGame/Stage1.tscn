@@ -219,7 +219,6 @@ shape = SubResource("SphereShape3D_fm25q")
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("5_ejd25")
-processor = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="world/Hurtbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -257,7 +256,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_fm25q")
 theme_override_styles/fill = SubResource("StyleBoxFlat_e6yma")
-value = 89.88
+value = 89.97
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]

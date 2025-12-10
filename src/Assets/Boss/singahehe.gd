@@ -203,4 +203,4 @@ func die():
 	else:
 		await get_tree().create_timer(0.2).timeout
 	
-	queue_free()
+	SceneManager.load_scene("res://src/Story/story_scene_end.tscn")
