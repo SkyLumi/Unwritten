@@ -1,0 +1,19 @@
+# STAGE 2 - Pembukaan
+background transition
+join mc 1
+
+mc: Aku... berpindah lagi?
+mc: Hmm, apapun caranya aku akan tetap fokus. Aku akan fokus untuk meraih kreatorku!
+mc: Mungkin aku akan cari cara untuk kesana, pertama aku akan ke lapangan itu dahulu.
+
+# MC berdiri di taman
+background park_day
+
+mc: Hmm, apa aku pernah kesini sebelumnya?
+mc: Tempat ini... rasanya familiar sekali.
+mc: Apakah itu... sekolah?
+mc: Jujur, terlihat agak terbengkalai...
+mc: Sepertinya aku harus coba untuk datang kesana.
+
+# Jalan menuju sekolah terbengkalai
+jump stage_2_school_path

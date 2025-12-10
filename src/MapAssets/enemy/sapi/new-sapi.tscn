@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf0kivemvvmfy"]
+
+[ext_resource type="PackedScene" uid="uid://hln6330ota54" path="res://src/MapAssets/enemy/sapi/sapi.glb" id="1_og24s"]
+[ext_resource type="Animation" uid="uid://c5tqh2xstobj0" path="res://src/MapAssets/enemy/sapi/sapi-idle.res" id="2_05ll3"]
+[ext_resource type="Animation" uid="uid://bsd4ugxrmlgc8" path="res://src/MapAssets/enemy/sapi/sapi-jalan.res" id="3_4w7mq"]
+[ext_resource type="Animation" uid="uid://dnge8gniomhng" path="res://src/MapAssets/enemy/sapi/sapi-nyerang.res" id="4_2feiv"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t3wm"]
+_data = {
+&"sapi-idle": ExtResource("2_05ll3"),
+&"sapi-jalan": ExtResource("3_4w7mq"),
+&"sapi-nyerang": ExtResource("4_2feiv")
+}
+
+[node name="sapi" instance=ExtResource("1_og24s")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(0.0133061595, 0.022454442, -0.16908889, 0.9852552)
+bones/3/rotation = Quaternion(-0.14100106, 0.043909192, -0.44150856, 0.88502026)
+bones/5/rotation = Quaternion(0.21142465, 0.02791013, -0.43182865, 0.8763816)
+bones/7/rotation = Quaternion(-0.46465096, -0.2314824, 0.124211214, 0.84562814)
+bones/9/rotation = Quaternion(-0.5162354, 0.008098171, 0.015547026, 0.85626733)
+
+[node name="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_7t3wm")
+}

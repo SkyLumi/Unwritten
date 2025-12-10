@@ -1,0 +1,33 @@
+# CUTSCENE ENDING - Pertemuan dengan Kreator
+background studio_evening
+join creator 1
+join mc 2
+
+creator: Memang sudah waktunya... sudah waktunya untuk berhenti menggambar.
+creator: Semua tidak ada artinya, kalau tidak ada yang peduli soal itu, apa gunanya terus mencoba..
+mc: Tunggu! Berhenti! Dengarkan aku!
+creator: Kamu... kamu bisa berbicara? K-Kamu hidup?!
+mc: Iya! Kamu kreator ku! Tolong pikirkan lagi pikiranmu untuk berhenti berkarya!
+mc: Kamu berbakat dan bertalenta! Tidak semua orang bisa begitu.
+
+# Creator menemukan diary (trigger: if player has diary pages, show different text)
+# conditional example (Dialogic supports if/set; ini contoh, sesuaikan dengan variabel game):
+if player_has_diary == true
+    creator: (melihat buku diary) Ini...?
+    mc: Iya, ini buku diary yang menjelaskan betapa kuatnya dirimu. Kamu yang periang, baik, pantang menyerah...
+    mc: Semua orang bisa merasakan sakit, dan itu tidak apa-apa!
+else
+    creator: (bingung) Ini... siapa kau?
+    mc: Aku hadir untuk mengingatkanmu bahwa karyamu berarti sesuatu.
+
+creator: Aku... Aku tidak tahu harus berbuat apa.
+mc: Jangan khawatir kreator, aku percaya padamu.
+
+# Creator berubah mood (tingkat motivasi naik)
+# action: Creator mengangguk dan tersenyum
+leave mc
+leave creator
+
+# MC kembali menjadi gambar (end)
+# sfx: transform
+# End timeline / kembali ke game atau credits

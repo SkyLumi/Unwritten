@@ -1,0 +1,16 @@
+# STAGE 1 - Pondok & Buku ditemukan
+background cottage_evening
+join mc 1
+
+mc: Ini, pondok yang bagus. Matahari terbenam selalu terlihat indah dari sini.
+mc: Di pondok ini rasanya sangat... damai...
+mc: Tunggu, apa ini?
+
+# gameplay: give item 'diary_page' or 'book'
+# item obtained
+mc: (membuka buku)
+mc: (membaca) "Hari ini, Sudah waktunya aku panen lagi... mama emang bilang aku nggak boleh terus-terusan gambar..."
+mc: Ini... cerita tentang kreatorku?
+
+# lanjut ke gudang
+jump stage_1_barn

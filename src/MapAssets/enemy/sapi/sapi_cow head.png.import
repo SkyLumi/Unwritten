@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d5b10muqmw1"
-path.s3tc="res://.godot/imported/sapi-idle_cow.png-0718451c37e4b03b9b5f3b98252df569.s3tc.ctex"
+uid="uid://da0jnyi0w1m6x"
+path.s3tc="res://.godot/imported/sapi_cow head.png-be01cb66f96d48c5471e1dd0f1ba9e6a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "57dc0528b53f83879e6d3a876c003e53"
+"md5": "11a24da652de20e00b71abfcd9c0cc8f"
 }
 
 [deps]
 
-source_file="res://src/MapAssets/enemy/sapi/sapi-idle_cow.png"
-dest_files=["res://.godot/imported/sapi-idle_cow.png-0718451c37e4b03b9b5f3b98252df569.s3tc.ctex"]
+source_file="res://src/MapAssets/enemy/sapi/sapi_cow head.png"
+dest_files=["res://.godot/imported/sapi_cow head.png-be01cb66f96d48c5471e1dd0f1ba9e6a.s3tc.ctex"]
 
 [params]
 

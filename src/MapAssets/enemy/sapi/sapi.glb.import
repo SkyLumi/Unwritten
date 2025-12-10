@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cs6tupv4wbg67"
-path="res://.godot/imported/sapi-idle.glb-58dd8a70ea68d5dbeb639613a5f00157.scn"
+uid="uid://hln6330ota54"
+path="res://.godot/imported/sapi.glb-bd630d31efa2205e75d4cd96428430cc.scn"
 
 [deps]
 
-source_file="res://src/MapAssets/enemy/sapi/sapi-idle.glb"
-dest_files=["res://.godot/imported/sapi-idle.glb-58dd8a70ea68d5dbeb639613a5f00157.scn"]
+source_file="res://src/MapAssets/enemy/sapi/sapi.glb"
+dest_files=["res://.godot/imported/sapi.glb-bd630d31efa2205e75d4cd96428430cc.scn"]
 
 [params]
 

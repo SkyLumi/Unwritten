@@ -25,10 +25,21 @@ Backsound="*res://src/Assets/Musics/backsound.tscn"
 [dialogic]
 
 directories/dch_directory={
-"character": "res://src/Character/character.dch"
+"character": "res://src/Character/character.dch",
+"mc": "res://src/Dialog/Scripts/mc.dch"
 }
 directories/dtl_directory={
-"stage1-timeline1": "res://src/Dialog/stage1-timeline1.dtl"
+"cutscene_intro": "res://src/Dialog/cutscene_intro.dtl",
+"ending_cutscene": "res://src/Dialog/ending_cutscene.dtl",
+"stage1-timeline1": "res://src/Dialog/stage1-timeline1.dtl",
+"stage_1": "res://src/Dialog/stage_1.dtl",
+"stage_1_barn": "res://src/Dialog/stage_1_barn.dtl",
+"stage_1_cottage": "res://src/Dialog/stage_1_cottage.dtl",
+"stage_1_cow": "res://src/Dialog/stage_1_cow.dtl",
+"stage_1_hill": "res://src/Dialog/stage_1_hill.dtl",
+"stage_2_bridge": "res://src/Dialog/stage_2_bridge.dtl",
+"stage_2_intro": "res://src/Dialog/stage_2_intro.dtl",
+"stage_2_school_path": "res://src/Dialog/stage_2_school_path.dtl"
 }
 layout/style_directory={}
 

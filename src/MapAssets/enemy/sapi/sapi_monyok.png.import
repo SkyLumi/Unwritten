@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqhonl1t6vfce"
-path.s3tc="res://.godot/imported/sapi-idle_monyok.png-6b2ac84d948ae0b85805bf0c1d10fa95.s3tc.ctex"
+uid="uid://qvnvgv8mh5hq"
+path.s3tc="res://.godot/imported/sapi_monyok.png-f0a2c850b36a0137b516ddc627d87374.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://src/MapAssets/enemy/sapi/sapi-idle_monyok.png"
-dest_files=["res://.godot/imported/sapi-idle_monyok.png-6b2ac84d948ae0b85805bf0c1d10fa95.s3tc.ctex"]
+source_file="res://src/MapAssets/enemy/sapi/sapi_monyok.png"
+dest_files=["res://.godot/imported/sapi_monyok.png-f0a2c850b36a0137b516ddc627d87374.s3tc.ctex"]
 
 [params]
 
