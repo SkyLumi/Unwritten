@@ -205,7 +205,7 @@ size = Vector3(10.06, 0.795, 13.77)
 [node name="Stage1" type="Node3D"]
 
 [node name="stage1-timeline2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 3.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 5.5, 0)
 script = ExtResource("18_vevcq")
 dialog_path = "res://src/Dialog/stage_1_cow.dtl"
 
@@ -273,7 +273,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_ejd25")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fm25q")
-value = 92.01
+value = 91.12
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]
@@ -444,7 +444,7 @@ speed = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.057129, -2.1402636, -3.1730747)
 
 [node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 3, 5)
 navigation_mesh = SubResource("NavigationMesh_k8ro3")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D2"]
