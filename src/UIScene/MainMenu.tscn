@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlql22jebfurh"]
+[gd_scene load_steps=12 format=3 uid="uid://dlql22jebfurh"]
 
+[ext_resource type="Script" uid="uid://uklu7nb6cyvk" path="res://src/UIScene/main_menu.gd" id="1_do37m"]
 [ext_resource type="Texture2D" uid="uid://b2d1yq725gbrg" path="res://src/Assets/UI Assets/UI Start/TitleScreen.png" id="1_iv7dx"]
+[ext_resource type="Texture2D" uid="uid://c8uval2ipxwcu" path="res://src/Assets/UI Assets/UI Start/image 3.png" id="2_et3ax"]
 [ext_resource type="Texture2D" uid="uid://0urc0nu8ccx7" path="res://src/Assets/UI Assets/UI Start/ButtonMulai.png" id="2_ilr13"]
 [ext_resource type="Texture2D" uid="uid://ebt7mqo53qcr" path="res://src/Assets/UI Assets/UI Start/ButtonExit.png" id="3_do37m"]
 [ext_resource type="Script" uid="uid://b13k1ekntjiwq" path="res://src/UIScene/Scripts/start.gd" id="3_ilr13"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_et3ax"]
-specular_color = Color(0.36282945, 0.36282945, 0.36282945, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icyju"]
 
@@ -38,12 +37,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_do37m")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = SubResource("CanvasTexture_et3ax")
+texture = ExtResource("2_et3ax")
+expand_mode = 2
 
 [node name="Judul" type="TextureRect" parent="."]
 layout_mode = 0
