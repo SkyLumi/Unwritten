@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgovcye5v3f81"]
+
+[ext_resource type="Script" uid="uid://bgtbfagxti62w" path="res://src/Assets/Boss/hudboss.gd" id="1_175o0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cktq4"]
+bg_color = Color(0.050980393, 0.078431375, 0.050980393, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.05, 0.15, 0.05, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_175o0"]
+bg_color = Color(0.9010021, 0.29661196, 0.2831778, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c04ym"]
+bg_color = Color(0.05, 0.08, 0.05, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.05, 0.15, 0.05, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwb7n"]
+bg_color = Color(0.26844585, 0.7437366, 0.27200484, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.05, 0.15, 0.05, 1)
+
+[node name="hudboss" type="CanvasLayer"]
+script = ExtResource("1_175o0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 669.0
+offset_top = 966.0
+offset_right = 1369.0
+offset_bottom = 1019.0
+
+[node name="DamageBar" type="ProgressBar" parent="Control"]
+modulate = Color(0.8, 0.1, 0.1, 1)
+layout_mode = 1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 700.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_styles/background = SubResource("StyleBoxFlat_cktq4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_175o0")
+value = 92.39
+allow_greater = true
+show_percentage = false
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+modulate = Color(1, 0.2, 0.2, 1)
+layout_mode = 1
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 700.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/background = SubResource("StyleBoxFlat_c04ym")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bwb7n")
+value = 100.0
+show_percentage = false
+
+[node name="Value" type="Label" parent="Control/ProgressBar"]
+layout_mode = 0
+offset_left = 275.0
+offset_top = 8.0
+offset_right = 419.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 22
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -62.0
+offset_right = 240.0
+offset_bottom = -5.0
+theme_override_font_sizes/font_size = 41
+text = "Singa Ulung"
