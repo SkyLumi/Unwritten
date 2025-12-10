@@ -129,10 +129,15 @@ func attack():
 	if target and global_position.distance_to(target.global_position) <= attack_radius + 1.0:
 		var model = target.get_node_or_null("Model")
 		if model:
-			var resources = model.get_node_or_null("Resources")
-			if resources and resources.has_method("lose_health"):
-				resources.lose_health(damage)
-				print("Boss dealing damage to player: ", damage)
+			# Support for MCModel (direct method) or legacy (Resources node)
+			if model.has_method("lose_health"):
+				model.lose_health(damage)
+				print("Boss dealing damage to player (Direct): ", damage)
+			else:
+				var resources = model.get_node_or_null("Resources")
+				if resources and resources.has_method("lose_health"):
+					resources.lose_health(damage)
+					print("Boss dealing damage to player (Resources node): ", damage)
 	
 	# Start cooldown
 	attack_timer.start()

@@ -383,7 +383,7 @@ speed = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.057129, -2.1402636, -3.1730747)
 
 [node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 2, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 3, 5)
 navigation_mesh = SubResource("NavigationMesh_k8ro3")
 
 [node name="CowEnemy" parent="NavigationRegion3D2" instance=ExtResource("21_k8ro3")]
