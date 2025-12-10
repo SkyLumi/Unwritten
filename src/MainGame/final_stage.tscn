@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bf65u5owfy44w"]
 
-[ext_resource type="Script" uid="uid://dtc6voufn46ha" path="res://src/MainGame/Scripts/final_stage.gd" id="1_7mgjm"]
+[ext_resource type="Script" path="res://src/MainGame/Scripts/final_stage.gd" id="1_7mgjm"]
 [ext_resource type="MeshLibrary" uid="uid://dehiepdo4haso" path="res://src/Assets/Tilemaps-fix/tiles.tres" id="1_wh6o6"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_nkn70"]
 [ext_resource type="PackedScene" uid="uid://dqneht6teqyb4" path="res://src/Assets/Boss/singahehe.tscn" id="3_7mgjm"]
@@ -66,7 +66,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="player" parent="." instance=ExtResource("2_nkn70")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 143.55319, 2.9366074, 1.4211216)
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 149.30136, 2.9366074, 1.4211216)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, -0.5)
@@ -78,7 +78,7 @@ mesh = SubResource("BoxMesh_y183w")
 material = SubResource("StandardMaterial3D_y183w")
 
 [node name="singahehe" parent="NavigationRegion3D" instance=ExtResource("3_7mgjm")]
-transform = Transform3D(-8.917123e-08, 0, 2.04, 0, 2.04, 0, -2.04, 0, -8.917123e-08, 14.5, 2.25, -0.75)
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, 14.5, 2.25, -0.75)
 chase_radius = 100.0
 attack_radius = 20.0
 damage = 30

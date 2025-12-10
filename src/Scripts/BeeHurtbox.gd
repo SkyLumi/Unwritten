@@ -61,19 +61,20 @@ func _is_eligible_attacking_weapon(area: Area3D) -> bool:
 			print("BeeHurtbox ignoring weapon in group: ", group)
 			return false
 	
-	# If it's a player weapon, ACCEPT IT regardless of is_attacking status for now
-	# This fixes the issue where is_attacking might not be set correctly by animation
+	# If it's a player weapon, check is_attacking status
 	if area.is_in_group("player_weapon"):
-		print("BeeHurtbox: Valid player_weapon detected!")
-		return true
+		if area.get("is_attacking") == true:
+			print("BeeHurtbox: Valid attacking player_weapon detected!")
+			return true
+		else:
+			return false
 	
 	if "is_attacking" in area:
 		if area.is_attacking:
 			return true
 		else:
-			print("BeeHurtbox: Weapon found but is_attacking is false. (Ignoring check for player_weapon group)")
-			# return false # COMMENTED OUT to force hit
-			return true # FORCE HIT for debugging
+			print("BeeHurtbox: Weapon found but is_attacking is false.")
+			return false
 	
 	print("BeeHurtbox: Area is not a valid weapon (no is_attacking property)")
 	return false
