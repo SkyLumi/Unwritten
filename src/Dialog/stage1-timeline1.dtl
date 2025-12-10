@@ -1,5 +1,6 @@
-character: Aku dimana?
-character: Ini Sawah? Tapi, kenapa aku bisa disini deh?
-character: Aku kenapa punya pedang? terus aku ngapain??
-character: Oiya, aku ingat sekarang!  dia butuh bantuanku, aku harus menolong dia dari kesedihannya!
-character: Sepertinya ada jalan kesana, lebih baik mencoba kesana
+join mc center [animation="Bounce In"]
+mc: Aku dimana?
+mc: Ini Sawah? Tapi, kenapa aku bisa disini deh?
+mc: Aku kenapa punya pedang? terus aku ngapain??
+mc: Oiya, aku ingat sekarang!  dia butuh bantuanku, aku harus menolong dia dari kesedihannya!
+mc: Sepertinya ada jalan kesana, lebih baik mencoba kesana

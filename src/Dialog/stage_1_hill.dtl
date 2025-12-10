@@ -1,6 +1,5 @@
 # STAGE 1 - Bukit
-background hill_sunset
-join mc 1
+join mc center [animation="Fade In"]
 
 mc: Bukit yang indah, aku ingin tau mengapa aku bisa terlahir di dunia ini.
 mc: Ah, bukit yang indah, mimpi yang indah.
@@ -10,4 +9,3 @@ mc: Ah, andai dia tahu betapa baik dan pengertiannya dia.
 mc: Aku harus cepat bertemu dengannya!
 
 # Parkour lanjut -> sampai pondok
-jump stage_1_cottage

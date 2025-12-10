@@ -1,6 +1,5 @@
 # STAGE 1 - Gudang
-background barn_interior
-join mc 1
+join mc 1 [animation="Fade In"]
 
 mc: Lagi-lagi tempat yang familiar...
 mc: Aku... berusaha ingat kembali, gudang ini...
@@ -11,13 +10,10 @@ mc: Apakah... ini yang dirasakan oleh kreatorku?
 mc: Aku ingin sekali bertemu dengannya! Harus ku beri tahu, dia bukanlah orang yang buruk sama sekali!
 
 # lebah muncul (enemy)
-join bee 2
 mc: Ah! Ada binatang jahat mau mengejarku!
-mc: Aku harus bersiap dengan pedangku!
+mc: Aku harus bersiap dengan kayuku!
 
 # gameplay: spawn bees (combat)
 # lebah mati
-mc: (menyelesaikan serangan terhadap lebah)
 
 # Stage 1 selesai
-jump stage_2_intro

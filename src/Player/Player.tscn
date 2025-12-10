@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" path="res://src/Player/MC/PlayerHUD.tscn" id="6_hud"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0r5q"]
-radius = 0.2
-height = 1.8
+radius = 1.3066406
+height = 5.3876953
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_1ax3b")
@@ -25,7 +25,7 @@ base_stamina = 200.0
 script = ExtResource("4_k1mdb")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(6.235, 0, 0, 0, 3.275, 0, 0, 0, 3.01, 0, 2.686, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.491176, -0.30546904)
 shape = SubResource("CapsuleShape3D_d0r5q")
 
 [node name="CameraMount" type="Node3D" parent="."]

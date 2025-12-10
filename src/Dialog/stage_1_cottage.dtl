@@ -1,6 +1,5 @@
 # STAGE 1 - Pondok & Buku ditemukan
-background cottage_evening
-join mc 1
+join mc center [animation="Fade In"]
 
 mc: Ini, pondok yang bagus. Matahari terbenam selalu terlihat indah dari sini.
 mc: Di pondok ini rasanya sangat... damai...
@@ -10,7 +9,6 @@ mc: Tunggu, apa ini?
 # item obtained
 mc: (membuka buku)
 mc: (membaca) "Hari ini, Sudah waktunya aku panen lagi... mama emang bilang aku nggak boleh terus-terusan gambar..."
-mc: Ini... cerita tentang kreatorku?
+mc: Ini... cerita tentang kreatorku? btw disitu ada apa deh, ada gudang kah?
 
 # lanjut ke gudang
-jump stage_1_barn

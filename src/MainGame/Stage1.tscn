@@ -1,6 +1,7 @@
-[gd_scene load_steps=55 format=3 uid="uid://ccjrvycgp04o5"]
+[gd_scene load_steps=53 format=3 uid="uid://ccjrvycgp04o5"]
 
 [ext_resource type="PackedScene" uid="uid://8cj7achnaca" path="res://src/MapAssets/enemy/bee/bee.tscn" id="1_73eqi"]
+[ext_resource type="Script" uid="uid://ykck152sifrs" path="res://src/MainGame/Scripts/stage_1.gd" id="1_fm25q"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_7mt63"]
 [ext_resource type="PackedScene" uid="uid://cx5kmibjcm5lu" path="res://src/WorldMap/world.scn" id="3_xfnad"]
 [ext_resource type="PackedScene" uid="uid://b02q6jkltenw" path="res://src/MapAssets/objectAssets/awan-level1.glb" id="4_7mt63"]
@@ -13,36 +14,33 @@
 [ext_resource type="Script" uid="uid://di2niteklmujg" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="10_084w1"]
 [ext_resource type="Script" uid="uid://cghh55ia1gk4l" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="11_22fmn"]
 [ext_resource type="Script" uid="uid://cdno2kbxy7x0t" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="12_g70w0"]
-[ext_resource type="Script" uid="uid://dq8thuvciiv8s" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
+[ext_resource type="Script" path="res://src/Scripts/horizontal-platform.gd" id="13_m73e5"]
 [ext_resource type="PackedScene" uid="uid://04y66fw83ucx" path="res://src/ModularAssets/meja_buku.tscn" id="15_22fmn"]
 [ext_resource type="PackedScene" uid="uid://bjxta848gw2cn" path="res://src/ModularAssets/batu.tscn" id="16_g70w0"]
-[ext_resource type="Script" uid="uid://xd8g8id580un" path="res://src/Scripts/Rock-Obstacle.gd" id="17_nyloc"]
+[ext_resource type="Script" path="res://src/Scripts/Rock-Obstacle.gd" id="17_nyloc"]
 [ext_resource type="Script" uid="uid://6yumj263pmwe" path="res://src/MainGame/Scripts/ganti_scene.gd" id="17_vlkwk"]
 [ext_resource type="Script" uid="uid://chiut7eymg84b" path="res://src/Dialog/Scripts/stage_1_timeline_1.gd" id="18_vevcq"]
 [ext_resource type="PackedScene" path="res://src/Interactables/Chest/Chest.tscn" id="20_73eqi"]
 [ext_resource type="PackedScene" uid="uid://bsr14fuufq7kj" path="res://src/MapAssets/enemy/sapi/CowEnemy.tscn" id="21_k8ro3"]
 [ext_resource type="Script" uid="uid://dcpr8rygwakx6" path="res://src/Player/EnemyHealthBillboard.gd" id="22_billboard"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_nyloc"]
-size = Vector3(9, 1.75, 14)
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_fm25q"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_e6yma"]
 radius = 0.8
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejd25"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm25q"]
 bg_color = Color(0.05, 0.08, 0.05, 0.8)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.05, 0.15, 0.05, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fm25q"]
-bg_color = Color(0.6, 0.15, 0.15, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6yma"]
+bg_color = Color(0.6, 0.15, 0.15, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpvkc"]
 bg_color = Color(0.05, 0.08, 0.05, 0.8)
 border_width_left = 1
 border_width_top = 1
@@ -50,7 +48,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.05, 0.15, 0.05, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpvkc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no2dp"]
 bg_color = Color(0.12, 0.35, 0.12, 1)
 border_width_left = 1
 border_width_top = 1
@@ -176,9 +174,6 @@ face_vertex_data = {
 &"vertex_index": SubResource("Resource_0fy4s")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_73eqi"]
-size = Vector3(4.2714844, 3.8394775, 4.3360596)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_vlkwk"]
 size = Vector3(8.5, 1, 5.25)
 
@@ -187,38 +182,27 @@ vertices = PackedVector3Array(-30.925123, -2.4385066, -15.551699, -30.925123, -2
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 region_merge_size = 37.73
 
-[sub_resource type="BoxMesh" id="BoxMesh_73eqi"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8ro3"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0)
-
 [sub_resource type="NavigationMesh" id="NavigationMesh_k8ro3"]
 vertices = PackedVector3Array(-1.5300002, 3.3325, -11.385, -1.5300002, 3.3325, 1.3649998, 7.47, 3.3325, 1.3649998, 7.47, 3.3325, -11.385)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ejd25"]
-size = Vector3(10.06, 0.795, 13.77)
+[sub_resource type="BoxShape3D" id="BoxShape3D_73eqi"]
+size = Vector3(4.2714844, 3.8394775, 4.3360596)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm25q"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nyloc"]
+size = Vector3(12.5, 1.75, 12)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_fm25q"]
+vertices = PackedVector3Array(-18, -1.5, -22.25, -18, -1.5, 16.75, 14.25, -1.5, 16.75, 14.25, -1.5, -22.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Stage1" type="Node3D"]
-
-[node name="stage1-timeline2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 3.5, 0)
-script = ExtResource("18_vevcq")
-dialog_path = "res://src/Dialog/stage_1_cow.dtl"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="stage1-timeline2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.875, 0.25)
-shape = SubResource("BoxShape3D_nyloc")
-debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+script = ExtResource("1_fm25q")
 
 [node name="player" parent="." instance=ExtResource("2_7mt63")]
 transform = Transform3D(-1.8358783e-08, 0, 0.42, 0, 0.42, 0, -0.42, 0, -1.8358783e-08, -1.6968079, 8.186607, -0.5788803)
 
 [node name="world" parent="." instance=ExtResource("3_xfnad")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="bee3" parent="world" instance=ExtResource("1_73eqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6219177, -2.1402636, 6.6902885)
@@ -246,7 +230,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="HealthBillboard" type="Node3D" parent="world"]
-transform = Transform3D(0.11331074, 0.85530406, 0.50558406, 0, 0.5088612, -0.8608484, -0.9935591, 0.097543396, 0.05765948, 0, 1.5, 0)
+transform = Transform3D(0.11331074, 0.87794983, 0.4651498, 0, 0.46816483, -0.883641, -0.9935591, 0.100126036, 0.05304814, 0, 1.5, 0)
 script = ExtResource("22_billboard")
 show_distance = 15.0
 
@@ -271,9 +255,9 @@ offset_top = 4.0
 offset_right = 156.0
 offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
-theme_override_styles/background = SubResource("StyleBoxFlat_ejd25")
-theme_override_styles/fill = SubResource("StyleBoxFlat_fm25q")
-value = 92.01
+theme_override_styles/background = SubResource("StyleBoxFlat_fm25q")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e6yma")
+value = 89.88
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]
@@ -286,8 +270,8 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
-theme_override_styles/background = SubResource("StyleBoxFlat_e6yma")
-theme_override_styles/fill = SubResource("StyleBoxFlat_wpvkc")
+theme_override_styles/background = SubResource("StyleBoxFlat_wpvkc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_no2dp")
 value = 100.0
 show_percentage = false
 
@@ -371,16 +355,6 @@ clouds = [NodePath("..")]
 [node name="MejaBuku" parent="." instance=ExtResource("15_22fmn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 224.5, 11.25, 35.5)
 
-[node name="Batu" parent="." instance=ExtResource("16_g70w0")]
-transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 102.594505, 11.249294, 13)
-script = ExtResource("17_nyloc")
-amplitude = 15.0
-speed = 50.0
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Batu"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
-shape = SubResource("BoxShape3D_73eqi")
-
 [node name="gantiScene" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 225.25, 14.5, 38.5)
 script = ExtResource("17_vlkwk")
@@ -389,47 +363,12 @@ script = ExtResource("17_vlkwk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0, -0.625)
 shape = SubResource("BoxShape3D_vlkwk")
 
-[node name="stage1-timeline1" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-script = ExtResource("18_vevcq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="stage1-timeline1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.875, -1.75)
-shape = SubResource("BoxShape3D_nyloc")
-debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
-
-[node name="Batu2" parent="." instance=ExtResource("16_g70w0")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 116.07429, 11.680614, 12.957233)
-script = ExtResource("17_nyloc")
-amplitude = 15.0
-speed = 20.0
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Batu2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
-shape = SubResource("BoxShape3D_73eqi")
-
-[node name="Batu3" parent="." instance=ExtResource("16_g70w0")]
-transform = Transform3D(1.515, 0, 0, 0, 1.515, 0, 0, 0, 1.515, 127.49233, 11.588718, 13)
-script = ExtResource("17_nyloc")
-amplitude = 15.0
-speed = 10.0
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Batu3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
-shape = SubResource("BoxShape3D_73eqi")
-
 [node name="Chest" parent="." instance=ExtResource("20_73eqi")]
 transform = Transform3D(-0.63089246, 0, 0.77587026, 0, 1, 0, -0.77587026, 0, -0.63089246, 82.735085, 18.003593, 45.299366)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 236.42212, 11.715874, 25.304733)
 navigation_mesh = SubResource("NavigationMesh_73eqi")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D"]
-transform = Transform3D(36.505, 0, 0, 0, 0.175, 0, 0, 0, 33.92, -13.172623, -2.8510065, 0.9083004)
-visible = false
-mesh = SubResource("BoxMesh_73eqi")
-material = SubResource("StandardMaterial3D_k8ro3")
 
 [node name="bee2" parent="NavigationRegion3D" instance=ExtResource("1_73eqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6219177, -2.1402636, 9.748901)
@@ -447,15 +386,136 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.057129, -2.1402636, -3.173
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 2, 5)
 navigation_mesh = SubResource("NavigationMesh_k8ro3")
 
-[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.48, -5)
-visible = false
-mesh = SubResource("BoxMesh_ejd25")
-material = SubResource("StandardMaterial3D_fm25q")
-
 [node name="CowEnemy" parent="NavigationRegion3D2" instance=ExtResource("21_k8ro3")]
 transform = Transform3D(0.12229175, 0, -0.07790844, 0, 0.145, 0, 0.07790844, 0, 0.12229175, 5, 4, -8)
 speed = 1.0
 chase_radius = 5.0
 attack_radius = 1.0
 damage = 10
+
+[node name="BatuBatuan" type="Node3D" parent="."]
+
+[node name="Batu4" parent="BatuBatuan" instance=ExtResource("16_g70w0")]
+transform = Transform3D(2.605, 0, 0, 0, 2.605, 0, 0, 0, 2.605, 127.49233, 11.588718, 87.5)
+script = ExtResource("17_nyloc")
+amplitude = 15.0
+speed = 10.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BatuBatuan/Batu4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
+shape = SubResource("BoxShape3D_73eqi")
+
+[node name="Batu5" parent="BatuBatuan" instance=ExtResource("16_g70w0")]
+transform = Transform3D(2.295225, 0, 0, 0, 2.295225, 0, 0, 0, 2.295225, 89.39322, 13.145626, 101.3125)
+script = ExtResource("17_nyloc")
+amplitude = 15.0
+speed = 10.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BatuBatuan/Batu5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
+shape = SubResource("BoxShape3D_73eqi")
+
+[node name="Batu6" parent="BatuBatuan" instance=ExtResource("16_g70w0")]
+transform = Transform3D(2.295225, 0, 0, 0, 2.295225, 0, 0, 0, 2.295225, 47.39322, 13.145626, 87.0625)
+script = ExtResource("17_nyloc")
+amplitude = 15.0
+speed = 10.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BatuBatuan/Batu6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
+shape = SubResource("BoxShape3D_73eqi")
+
+[node name="Batu2" parent="BatuBatuan" instance=ExtResource("16_g70w0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 116.07429, 11.680614, 12.957233)
+script = ExtResource("17_nyloc")
+amplitude = 15.0
+speed = 20.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BatuBatuan/Batu2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
+shape = SubResource("BoxShape3D_73eqi")
+
+[node name="Batu3" parent="BatuBatuan" instance=ExtResource("16_g70w0")]
+transform = Transform3D(1.515, 0, 0, 0, 1.515, 0, 0, 0, 1.515, 127.49233, 11.588718, 13)
+script = ExtResource("17_nyloc")
+amplitude = 15.0
+speed = 10.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BatuBatuan/Batu3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
+shape = SubResource("BoxShape3D_73eqi")
+
+[node name="Batu" parent="BatuBatuan" instance=ExtResource("16_g70w0")]
+transform = Transform3D(1.51, 0, 0, 0, 1.51, 0, 0, 0, 1.51, 102.594505, 11.249294, 13)
+script = ExtResource("17_nyloc")
+amplitude = 15.0
+speed = 20.0
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BatuBatuan/Batu"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126953125, -0.06561279, -0.10443115)
+shape = SubResource("BoxShape3D_73eqi")
+
+[node name="Dialog" type="Node3D" parent="."]
+
+[node name="stage1-timeline3" type="Area3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 17.75, 13.5)
+script = ExtResource("18_vevcq")
+dialog_path = "res://src/Dialog/stage_1_hill.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/stage1-timeline3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.875, 1.75)
+shape = SubResource("BoxShape3D_nyloc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
+[node name="stage1-timeline4" type="Area3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.75, 10.75, 23.75)
+script = ExtResource("18_vevcq")
+dialog_path = "res://src/Dialog/stage_1_cottage.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/stage1-timeline4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.875, 0.5)
+shape = SubResource("BoxShape3D_nyloc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
+[node name="stage1-timeline5" type="Area3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.25, 10.75, 94)
+script = ExtResource("18_vevcq")
+dialog_path = "res://src/Dialog/stage_1_barn.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/stage1-timeline5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 0.875, 0.5)
+shape = SubResource("BoxShape3D_nyloc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
+[node name="stage1-timeline2" type="Area3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5, 4.5, 0)
+script = ExtResource("18_vevcq")
+dialog_path = "res://src/Dialog/stage_1_cow.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/stage1-timeline2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.875, -0.625)
+shape = SubResource("BoxShape3D_nyloc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
+[node name="stage1-timeline1" type="Area3D" parent="Dialog"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+script = ExtResource("18_vevcq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dialog/stage1-timeline1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.875, -1.75)
+shape = SubResource("BoxShape3D_nyloc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
+[node name="NavigationRegion3D3" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 11.25, 94.75)
+navigation_mesh = SubResource("NavigationMesh_fm25q")
+
+[node name="bee2" parent="NavigationRegion3D3" instance=ExtResource("1_73eqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.378082, -1.3902636, 9.748901)
+speed = 3.0
+attack_cooldown = 4.0
+
+[node name="bee3" parent="NavigationRegion3D3" instance=ExtResource("1_73eqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3780823, -1.3902636, -10.001099)
+speed = 3.0
+attack_cooldown = 4.0

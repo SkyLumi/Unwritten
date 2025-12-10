@@ -1,7 +1,5 @@
 # STAGE 1 - Encounter: Sapi
-background field_day
-join mc 1
-join cow 2
+join mc center [animation="Bounce In"]
 
 mc: Hah? Sapi?
 cow: Moo...?
@@ -22,4 +20,3 @@ mc: Hmm..
 mc: H-hah, oke, sekarang sudah waktunya aku tetap maju!
 
 # Lanjut ke bukit
-jump stage_1_hill

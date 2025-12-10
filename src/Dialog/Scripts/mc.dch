@@ -10,12 +10,22 @@
 "style": "",
 "suffix": ""
 },
-&"default_portrait": "",
+&"default_portrait": "netral",
 &"description": "",
-&"display_name": "mc",
+&"display_name": "Cici",
 &"mirror": false,
 &"nicknames": [""],
-&"offset": Vector2(0, 0),
-&"portraits": {},
+&"offset": Vector2(10, 100),
+&"portraits": {
+"netral": {
+"export_overrides": {
+"image": "\"res://src/Dialog/Gambar/neutral.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
 &"scale": 1.0
 }
