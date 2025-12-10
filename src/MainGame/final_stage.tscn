@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf65u5owfy44w"]
+[gd_scene load_steps=15 format=3 uid="uid://bf65u5owfy44w"]
 
 [ext_resource type="Script" uid="uid://dtc6voufn46ha" path="res://src/MainGame/Scripts/final_stage.gd" id="1_7mgjm"]
 [ext_resource type="MeshLibrary" uid="uid://dehiepdo4haso" path="res://src/Assets/Tilemaps-fix/tiles.tres" id="1_wh6o6"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_nkn70"]
 [ext_resource type="PackedScene" uid="uid://dqneht6teqyb4" path="res://src/Assets/Boss/singahehe.tscn" id="3_7mgjm"]
 [ext_resource type="PackedScene" uid="uid://bgovcye5v3f81" path="res://src/Assets/Boss/hudboss.tscn" id="5_y183w"]
+[ext_resource type="Shader" uid="uid://660cxqo5fc71" path="res://src/Shader/water.gdshader" id="6_mqvkd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nkn70"]
 sky_top_color = Color(0.7020888, 0.75572693, 0.82756436, 1)
@@ -33,6 +34,23 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 size = Vector3(127.815, 1, 126.98)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y183w"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2t6es"]
+size = Vector2(500, 500)
+subdivide_width = 32
+subdivide_depth = 32
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdgyc"]
+render_priority = 0
+shader = ExtResource("6_mqvkd")
+shader_parameter/WATER_COL = Color(0.04, 0.38, 0.88, 1)
+shader_parameter/WATER2_COL = Color(0.04, 0.35, 0.78, 1)
+shader_parameter/FOAM_COL = Color(0.8125, 0.9609, 0.9648, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(10, 10)
+shader_parameter/height = 2.0
+shader_parameter/wave_size = Vector2(2, 2)
+shader_parameter/wave_speed = 1.5
 
 [node name="FinalStage" type="Node3D"]
 script = ExtResource("1_7mgjm")
@@ -66,3 +84,8 @@ attack_radius = 20.0
 damage = 30
 
 [node name="hudboss" parent="." instance=ExtResource("5_y183w")]
+
+[node name="water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.75, 0, -3)
+mesh = SubResource("PlaneMesh_2t6es")
+surface_material_override/0 = SubResource("ShaderMaterial_mdgyc")

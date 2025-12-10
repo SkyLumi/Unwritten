@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbp2ix8ofbehu"]
+[gd_scene load_steps=3 format=3 uid="uid://dbp2ix8ofbehu"]
 
 [ext_resource type="AudioStream" uid="uid://ctnsyjltqsgmp" path="res://src/Assets/Musics/Wind Waker The Great Sea (Ocean) Music Extended.mp3" id="1_7phkj"]
+[ext_resource type="Script" uid="uid://c14mxdqlwcacd" path="res://src/Assets/Musics/backsound.gd" id="2_5eoms"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_7phkj")
 autoplay = true
+script = ExtResource("2_5eoms")

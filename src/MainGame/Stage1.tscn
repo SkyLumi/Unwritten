@@ -218,6 +218,7 @@ debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
 transform = Transform3D(-1.8358783e-08, 0, 0.42, 0, 0.42, 0, -0.42, 0, -1.8358783e-08, -1.6968079, 8.186607, -0.5788803)
 
 [node name="world" parent="." instance=ExtResource("3_xfnad")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="bee3" parent="world" instance=ExtResource("1_73eqi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6219177, -2.1402636, 6.6902885)
@@ -245,7 +246,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="HealthBillboard" type="Node3D" parent="world"]
-transform = Transform3D(0.11331074, 0.87794983, 0.4651498, 0, 0.46816483, -0.883641, -0.9935591, 0.100126036, 0.05304814, 0, 1.5, 0)
+transform = Transform3D(0.11331074, 0.85530406, 0.50558406, 0, 0.5088612, -0.8608484, -0.9935591, 0.097543396, 0.05765948, 0, 1.5, 0)
 script = ExtResource("22_billboard")
 show_distance = 15.0
 
@@ -272,7 +273,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_ejd25")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fm25q")
-value = 89.2
+value = 92.01
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]
