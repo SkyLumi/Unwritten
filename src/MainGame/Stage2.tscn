@@ -37,7 +37,7 @@ shape = SubResource("BoxShape3D_5xrnw")
 [node name="World2" parent="." instance=ExtResource("1_h17py")]
 
 [node name="player" parent="." instance=ExtResource("2_nvukp")]
-transform = Transform3D(-0.021981094, 0, -0.41942438, 0, 0.42, 0, 0.41942438, 0, -0.021981094, -1.0364647, 14.726965, 37.758007)
+transform = Transform3D(-0.021981094, 0, -0.41942438, 0, 0.42, 0, 0.41942438, 0, -0.021981094, 150.68512, 14.726965, -1.7714329)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ixyxl")
