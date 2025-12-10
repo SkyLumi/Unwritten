@@ -266,7 +266,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_ejd25")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fm25q")
-value = 47.35
+value = 92.99
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]
