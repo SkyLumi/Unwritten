@@ -256,7 +256,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_fm25q")
 theme_override_styles/fill = SubResource("StyleBoxFlat_e6yma")
-value = 89.97
+value = 57.41
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="world/HealthBillboard/SubViewport/Control"]
@@ -382,7 +382,7 @@ speed = 4.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.057129, -2.1402636, -3.1730747)
 
 [node name="NavigationRegion3D2" type="NavigationRegion3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 3, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 1.75, 5)
 navigation_mesh = SubResource("NavigationMesh_k8ro3")
 
 [node name="CowEnemy" parent="NavigationRegion3D2" instance=ExtResource("21_k8ro3")]

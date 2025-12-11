@@ -1,6 +1,5 @@
 # STAGE 2 - Menuju Sekolah
-background school_path
-join mc 1
+join mc center [animation="Fade In"]
 
 mc: Ah, aku tau, sekolah ini punya kenangan yang buruk.
 mc: Dia pernah di-bully, ditertawakan oleh teman sekelasnya cuma karena dia dari keluarga yang kurang mampu.
@@ -18,4 +17,3 @@ mc: Dasar orang-orang jahat! Aku sudah tau aku harus apa.
 mc: Aku akan lanjut untuk meraihnya!
 
 # Jembatan (hati-hati)
-jump stage_2_bridge

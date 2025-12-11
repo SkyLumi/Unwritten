@@ -40,6 +40,9 @@ var story_data = [
 var index_sekarang = 0 # Penanda kita lagi di slide nomor berapa
 
 func _ready():
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	Backsound.ganti_musik(music_sad)
 	update_tampilan() # Tampilkan slide pertama pas mulai
 

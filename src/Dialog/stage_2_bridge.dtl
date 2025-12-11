@@ -1,9 +1,7 @@
 # STAGE 2 - Jembatan / Approaching final stage
-background bridge_fog
-join mc 1
+join mc center [animation="Bounce In"]
 
 mc: Agaknya aku harus berhati-hati disini, menakutkan kalau sampai jatuh...
 
 # Gameplay: platforming/jump checks across bridge
 # Setelah sukses -> lanjut ke ending cutscene
-jump ending_cutscene

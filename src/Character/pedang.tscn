@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvegk4ovxo8w0"]
+
+[ext_resource type="PackedScene" uid="uid://dmigqljhqmdmm" path="res://src/Character/Pedang.glb" id="1_1woth"]
+
+[node name="Pedang" instance=ExtResource("1_1woth")]
+
+[node name="stick" parent="." index="0"]
+transform = Transform3D(0.118463054, 0, 0, 0, 0.11846305, 0, 0, 0, 0.11846304, 0, 0, 0)

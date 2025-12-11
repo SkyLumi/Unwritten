@@ -39,7 +39,8 @@ directories/dtl_directory={
 "stage_1_hill": "res://src/Dialog/stage_1_hill.dtl",
 "stage_2_bridge": "res://src/Dialog/stage_2_bridge.dtl",
 "stage_2_intro": "res://src/Dialog/stage_2_intro.dtl",
-"stage_2_school_path": "res://src/Dialog/stage_2_school_path.dtl"
+"stage_2_school_path": "res://src/Dialog/stage_2_school_path.dtl",
+"stage_3_timeline1": "res://src/Dialog/stage_3_timeline1.dtl"
 }
 layout/style_directory={}
 

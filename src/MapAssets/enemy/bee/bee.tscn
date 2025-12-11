@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://8cj7achnaca"]
+[gd_scene load_steps=12 format=3 uid="uid://8cj7achnaca"]
 
 [ext_resource type="PackedScene" uid="uid://x2ttrsg8lff6" path="res://src/MapAssets/enemy/bee/bee.glb" id="1_e614h"]
 [ext_resource type="Script" uid="uid://44nq1wsxhkd6" path="res://src/MapAssets/enemy/bee/SimpleBeeEnemy.gd" id="2_script"]
@@ -8,7 +8,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_bee"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hurtbox"]
-radius = 0.8
+radius = 1.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx63c"]
 bg_color = Color(0.05, 0.08, 0.05, 0.8)
@@ -37,7 +37,8 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.05, 0.15, 0.05, 1)
 
-
+[sub_resource type="ViewportTexture" id="ViewportTexture_ljvdw"]
+viewport_path = NodePath("HealthBillboard/SubViewport")
 
 [node name="bee2" type="CharacterBody3D" groups=["enemy"]]
 script = ExtResource("2_script")
@@ -57,7 +58,6 @@ shape = SubResource("SphereShape3D_bee")
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("4_hurtbox")
-processor = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hurtbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -95,7 +95,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_qx63c")
 theme_override_styles/fill = SubResource("StyleBoxFlat_7avy0")
-value = 92.39
+value = 64.92
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="HealthBillboard/SubViewport/Control"]
@@ -129,3 +129,4 @@ modulate = Color(1, 1, 1, 0.95)
 pixel_size = 0.006
 billboard = 2
 texture_filter = 2
+texture = SubResource("ViewportTexture_ljvdw")

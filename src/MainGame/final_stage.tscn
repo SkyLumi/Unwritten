@@ -1,11 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://bf65u5owfy44w"]
+[gd_scene load_steps=17 format=3 uid="uid://bf65u5owfy44w"]
 
-[ext_resource type="Script" path="res://src/MainGame/Scripts/final_stage.gd" id="1_7mgjm"]
+[ext_resource type="Script" uid="uid://dtc6voufn46ha" path="res://src/MainGame/Scripts/final_stage.gd" id="1_7mgjm"]
 [ext_resource type="MeshLibrary" uid="uid://dehiepdo4haso" path="res://src/Assets/Tilemaps-fix/tiles.tres" id="1_wh6o6"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_nkn70"]
 [ext_resource type="PackedScene" uid="uid://dqneht6teqyb4" path="res://src/Assets/Boss/singahehe.tscn" id="3_7mgjm"]
 [ext_resource type="PackedScene" uid="uid://bgovcye5v3f81" path="res://src/Assets/Boss/hudboss.tscn" id="5_y183w"]
 [ext_resource type="Shader" uid="uid://660cxqo5fc71" path="res://src/Shader/water.gdshader" id="6_mqvkd"]
+[ext_resource type="Script" uid="uid://chiut7eymg84b" path="res://src/Dialog/Scripts/stage_1_timeline_1.gd" id="7_2t6es"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nkn70"]
 sky_top_color = Color(0.7020888, 0.75572693, 0.82756436, 1)
@@ -52,6 +53,9 @@ shader_parameter/height = 2.0
 shader_parameter/wave_size = Vector2(2, 2)
 shader_parameter/wave_speed = 1.5
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdgyc"]
+size = Vector3(17.5, 3.25, 18.75)
+
 [node name="FinalStage" type="Node3D"]
 script = ExtResource("1_7mgjm")
 
@@ -89,3 +93,13 @@ damage = 30
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.75, 0, -3)
 mesh = SubResource("PlaneMesh_2t6es")
 surface_material_override/0 = SubResource("ShaderMaterial_mdgyc")
+
+[node name="stage3-timeline1" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145.25, 2, 2.5)
+script = ExtResource("7_2t6es")
+dialog_path = "res://src/Dialog/stage_3_timeline1.dtl"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stage3-timeline1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -0.875)
+shape = SubResource("BoxShape3D_mdgyc")
+debug_color = Color(17.34272, 0, 13.821272, 0.9843137)

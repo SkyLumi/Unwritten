@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://drjqcoul7pinv"]
 
 [ext_resource type="Script" uid="uid://bepxcserhjcny" path="res://src/Player/Player.gd" id="1_1ax3b"]
-[ext_resource type="PackedScene" path="res://src/Player/MC/MCVisuals.tscn" id="2_yjnpd"]
+[ext_resource type="PackedScene" uid="uid://b7flio3tyuvgy" path="res://src/Player/MC/MCVisuals.tscn" id="2_yjnpd"]
 [ext_resource type="PackedScene" path="res://src/Player/MC/MCModel.tscn" id="3_b4ws5"]
 [ext_resource type="Script" uid="uid://bsgheu4jdbo2b" path="res://src/Player/Input/Input.gd" id="4_k1mdb"]
 [ext_resource type="Script" uid="uid://b7au3oktvuhky" path="res://src/Player/Camera.gd" id="5_5e7cy"]
 [ext_resource type="PackedScene" path="res://src/Player/MC/PlayerHUD.tscn" id="6_hud"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d0r5q"]
-radius = 1.3066406
-height = 5.3876953
+radius = 1.9106445
+height = 5.409912
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_1ax3b")
@@ -18,14 +18,18 @@ script = ExtResource("1_1ax3b")
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Model" parent="." instance=ExtResource("3_b4ws5")]
-base_health = 2000.0
+base_health = 500.0
 base_stamina = 200.0
+attack_stamina_cost = 2.0
+idle_jump_velocity = 6.5
+walk_jump_velocity = 6.5
+walk_jump_air_speed = 8.0
 
 [node name="Input" type="Node" parent="."]
 script = ExtResource("4_k1mdb")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.491176, -0.30546904)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4800675, -0.30546904)
 shape = SubResource("CapsuleShape3D_d0r5q")
 
 [node name="CameraMount" type="Node3D" parent="."]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://bsr14fuufq7kj"]
 
-[ext_resource type="Script" uid="uid://dyx5os2cj51wx" path="res://src/MapAssets/enemy/sapi/CowEnemy.gd" id="2_script"]
+[ext_resource type="Script" path="res://src/MapAssets/enemy/sapi/CowEnemy.gd" id="2_script"]
 [ext_resource type="Script" uid="uid://dcpr8rygwakx6" path="res://src/Player/EnemyHealthBillboard.gd" id="3_billboard"]
 [ext_resource type="PackedScene" uid="uid://cf0kivemvvmfy" path="res://src/MapAssets/enemy/sapi/new-sapi.tscn" id="4_byljh"]
 [ext_resource type="Script" uid="uid://d0338ab3o3uoh" path="res://src/Scripts/BeeHurtbox.gd" id="4_hurtbox"]
@@ -95,7 +95,7 @@ offset_bottom = 28.0
 theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_styles/background = SubResource("StyleBoxFlat_byljh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5bhhc")
-value = 91.95
+value = 97.04
 show_percentage = false
 
 [node name="ProgressBar" type="ProgressBar" parent="HealthBillboard/SubViewport/Control"]

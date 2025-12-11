@@ -15,7 +15,7 @@ _data = {
 [node name="sapi" instance=ExtResource("1_og24s")]
 
 [node name="Skeleton3D" parent="Armature" index="0"]
-bones/1/rotation = Quaternion(0.0133061595, 0.022454442, -0.16908889, 0.9852552)
+bones/1/rotation = Quaternion(0.020232705, 0.024726294, 0.11788622, 0.9925131)
 bones/3/rotation = Quaternion(-0.14100106, 0.043909192, -0.44150856, 0.88502026)
 bones/5/rotation = Quaternion(0.21142465, 0.02791013, -0.43182865, 0.8763816)
 bones/7/rotation = Quaternion(-0.46465096, -0.2314824, 0.124211214, 0.84562814)
@@ -25,3 +25,4 @@ bones/9/rotation = Quaternion(-0.5162354, 0.008098171, 0.015547026, 0.85626733)
 libraries = {
 &"": SubResource("AnimationLibrary_7t3wm")
 }
+speed_scale = 1.478

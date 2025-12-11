@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlql22jebfurh"]
+[gd_scene load_steps=13 format=3 uid="uid://dlql22jebfurh"]
 
 [ext_resource type="Script" uid="uid://uklu7nb6cyvk" path="res://src/UIScene/main_menu.gd" id="1_do37m"]
 [ext_resource type="Texture2D" uid="uid://b2d1yq725gbrg" path="res://src/Assets/UI Assets/UI Start/TitleScreen.png" id="1_iv7dx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0urc0nu8ccx7" path="res://src/Assets/UI Assets/UI Start/ButtonMulai.png" id="2_ilr13"]
 [ext_resource type="Texture2D" uid="uid://ebt7mqo53qcr" path="res://src/Assets/UI Assets/UI Start/ButtonExit.png" id="3_do37m"]
 [ext_resource type="Script" uid="uid://b13k1ekntjiwq" path="res://src/UIScene/Scripts/start.gd" id="3_ilr13"]
+[ext_resource type="Script" uid="uid://bci7xcfrp3fl8" path="res://src/UIScene/exit.gd" id="7_icyju"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_icyju"]
 
@@ -80,5 +81,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_do37m")
 icon = ExtResource("3_do37m")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("7_icyju")
 
 [connection signal="pressed" from="Start" to="Start" method="_on_button_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]

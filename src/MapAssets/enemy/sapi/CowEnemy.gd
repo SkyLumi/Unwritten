@@ -92,16 +92,16 @@ func move_to_target(delta):
 	
 	var next_position = navigation_agent.get_next_path_position()
 	var direction = (next_position - global_position).normalized()
-	direction.y = 0  
+	direction.y = 0  # Keep on same height
 	
 	# Move
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
+	velocity = direction * speed
+	move_and_slide()
 	
 	# Rotate to face movement direction
 	if direction.length() > 0.01:
 		var target_rotation = atan2(direction.x, direction.z)
-		rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta) # Cows turn slower
+		rotation.y = lerp_angle(rotation.y, target_rotation, 10.0 * delta)
 	
 	# Play walk animation
 	play_anim("sapi-jalan")
