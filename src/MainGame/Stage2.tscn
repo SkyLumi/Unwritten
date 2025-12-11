@@ -1,6 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bk2dvnjb8msbw"]
 
 [ext_resource type="PackedScene" uid="uid://svvl4cwxk2b5" path="res://src/WorldMap/world2.tscn" id="1_h17py"]
+[ext_resource type="PackedScene" uid="uid://bf810fyivimu7" path="res://src/MapAssets/jamur/jamur.tscn" id="1_xjujp"]
 [ext_resource type="PackedScene" uid="uid://drjqcoul7pinv" path="res://src/Player/Player.tscn" id="2_nvukp"]
 [ext_resource type="PackedScene" uid="uid://8cj7achnaca" path="res://src/MapAssets/enemy/bee/bee.tscn" id="3_nvukp"]
 [ext_resource type="PackedScene" uid="uid://bjxta848gw2cn" path="res://src/ModularAssets/batu.tscn" id="4_qpift"]
@@ -25,6 +26,9 @@ size = Vector3(17.5, 4, 12)
 
 [node name="Stage2" type="Node3D"]
 
+[node name="Jamur" parent="." instance=ExtResource("1_xjujp")]
+transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 7.9637814, 9.296639, 51.304394)
+
 [node name="ganti_scene" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 284.23746, 12.275245, 11.484632)
 script = ExtResource("8_xjujp")
@@ -37,7 +41,7 @@ shape = SubResource("BoxShape3D_5xrnw")
 [node name="World2" parent="." instance=ExtResource("1_h17py")]
 
 [node name="player" parent="." instance=ExtResource("2_nvukp")]
-transform = Transform3D(-0.021981094, 0, -0.41942438, 0, 0.42, 0, 0.41942438, 0, -0.021981094, 149.11784, 11.673347, 0.4415989)
+transform = Transform3D(-0.021981094, 0, -0.41942438, 0, 0.42, 0, 0.41942438, 0, -0.021981094, 150.68512, 14.726965, -1.7714329)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ixyxl")
@@ -178,3 +182,8 @@ dialog_path = "res://src/Dialog/stage_2_bridge.dtl"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2, -1.75)
 shape = SubResource("BoxShape3D_hk76s")
 debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+[node name="Jamur2" parent="." instance=ExtResource("1_xjujp")]
+transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 21.511488, 11.220445, 83.34925)
+
+[node name="Jamur3" parent="." instance=ExtResource("1_xjujp")]
+transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 9.948422, 13.376225, 144.16797)
