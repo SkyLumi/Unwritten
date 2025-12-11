@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bk2dvnjb8msbw"]
+[gd_scene load_steps=17 format=3 uid="uid://bk2dvnjb8msbw"]
 
 [ext_resource type="PackedScene" uid="uid://svvl4cwxk2b5" path="res://src/WorldMap/world2.tscn" id="1_h17py"]
 [ext_resource type="PackedScene" uid="uid://bf810fyivimu7" path="res://src/MapAssets/jamur/jamur.tscn" id="1_xjujp"]
@@ -6,10 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://8cj7achnaca" path="res://src/MapAssets/enemy/bee/bee.tscn" id="3_nvukp"]
 [ext_resource type="PackedScene" uid="uid://bjxta848gw2cn" path="res://src/ModularAssets/batu.tscn" id="4_qpift"]
 [ext_resource type="PackedScene" uid="uid://bsr14fuufq7kj" path="res://src/MapAssets/enemy/sapi/CowEnemy.tscn" id="4_yxo6c"]
-[ext_resource type="Script" path="res://src/Scripts/Rock-Obstacle.gd" id="5_yxo6c"]
+[ext_resource type="Script" uid="uid://xd8g8id580un" path="res://src/Scripts/Rock-Obstacle.gd" id="5_yxo6c"]
 [ext_resource type="PackedScene" path="res://src/Interactables/Chest/Chest.tscn" id="7_5xrnw"]
 [ext_resource type="Script" uid="uid://6yumj263pmwe" path="res://src/MainGame/Scripts/ganti_scene.gd" id="8_xjujp"]
 [ext_resource type="Script" uid="uid://chiut7eymg84b" path="res://src/Dialog/Scripts/stage_1_timeline_1.gd" id="9_xjujp"]
+[ext_resource type="PackedScene" uid="uid://b8523yi1ftii1" path="res://src/NPC/NPC wave, idle.blend" id="11_lfeuw"]
+[ext_resource type="PackedScene" uid="uid://04y66fw83ucx" path="res://src/ModularAssets/meja_buku.tscn" id="12_lfu7p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xrnw"]
 size = Vector3(9.0271, 1.3735352, 7.4334717)
@@ -182,8 +184,33 @@ dialog_path = "res://src/Dialog/stage_2_bridge.dtl"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2, -1.75)
 shape = SubResource("BoxShape3D_hk76s")
 debug_color = Color(17.34272, 0, 13.821272, 0.9843137)
+
 [node name="Jamur2" parent="." instance=ExtResource("1_xjujp")]
 transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 21.511488, 11.220445, 83.34925)
 
 [node name="Jamur3" parent="." instance=ExtResource("1_xjujp")]
 transform = Transform3D(0.415, 0, 0, 0, 0.415, 0, 0, 0, 0.415, 9.948422, 13.376225, 144.16797)
+
+[node name="NPC wave, idle" parent="." instance=ExtResource("11_lfeuw")]
+transform = Transform3D(-0.5896053, 0, 0.8076915, 0, 1, 0, -0.8076915, 0, -0.5896053, 254.29208, 12.182559, 185.60616)
+
+[node name="NPC wave, idle2" parent="." instance=ExtResource("11_lfeuw")]
+transform = Transform3D(0.81755716, 0, -0.57584745, 0, 1, 0, 0.57584745, 0, 0.81755716, 213.17627, 12.182559, 194.69922)
+
+[node name="MejaBuku" parent="." instance=ExtResource("12_lfu7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246.98746, 15.234659, 208.71664)
+
+[node name="MejaBuku2" parent="." instance=ExtResource("12_lfu7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.06183, 15.234658, 208.97855)
+
+[node name="MejaBuku3" parent="." instance=ExtResource("12_lfu7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.09157, 15.234659, 209.08727)
+
+[node name="MejaBuku4" parent="." instance=ExtResource("12_lfu7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 246.98746, 15.234659, 195.3704)
+
+[node name="MejaBuku5" parent="." instance=ExtResource("12_lfu7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 228.06183, 15.234658, 195.63231)
+
+[node name="MejaBuku6" parent="." instance=ExtResource("12_lfu7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 208.09157, 15.234659, 195.74103)
